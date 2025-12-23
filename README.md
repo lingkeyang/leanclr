@@ -84,3 +84,8 @@ lean -l dotnetframework CoreTests -e test.App::Main
 - 在浏览器访问 `http://localhost:3000/`（若未使用 `npx serve`，请按实际端口调整）。
 - 点击 “Load wasm” 按钮以加载并初始化 LeanCLR。
 - 点击 “Run CoreTests::test.App::Main” 按钮以运行示例，可见输出 `Hello, World!`。
+
+## 联系方式
+
+- 邮箱：leanclr#code-philosophy.com
+- QQ群：1047250380

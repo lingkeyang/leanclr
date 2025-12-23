@@ -84,3 +84,8 @@ Usage:
 - Open your browser at `http://localhost:3000/` (adjust the URL if you are not using `npx serve`).
 - Click the “Load wasm” button to load and initialize LeanCLR.
 - Click “Run CoreTests::test.App::Main” to run the program; you should see `Hello, World!`.
+
+## Contact
+
+- Email: leanclr#code-philosophy.com
+- QQ Group: 1047250380
