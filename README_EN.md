@@ -85,6 +85,13 @@ Usage:
 - Click the “Load wasm” button to load and initialize LeanCLR.
 - Click “Run CoreTests::test.App::Main” to run the program; you should see `Hello, World!`.
 
+### Testing custom code
+
+- Scope: currently validated only with .NET Framework 4.x core libraries; type forwarding is not implemented yet, so .NET Standard/CoreCLR core libs are unsupported.
+- Prepare: create a .NET Framework 4.x class library (or a Unity assembly), add at least one `static` entry method, and build it into a DLL.
+- Run: on Win64, execute the DLL with `lean`; for H5, adjust the loading logic in [demo/h5/index.html](demo/h5/index.html) before testing.
+- Dependencies: [demo/win64/dotnetframework](demo/win64/dotnetframework) ships only a few DLLs. If you need more framework DLLs, add their search paths with `-l <dll search path>`.
+
 ## Contact
 
 - Email: leanclr#code-philosophy.com

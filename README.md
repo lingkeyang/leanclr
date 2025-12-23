@@ -85,6 +85,13 @@ lean -l dotnetframework CoreTests -e test.App::Main
 - 点击 “Load wasm” 按钮以加载并初始化 LeanCLR。
 - 点击 “Run CoreTests::test.App::Main” 按钮以运行示例，可见输出 `Hello, World!`。
 
+### 测试自定义代码
+
+- 环境限制：目前仅验证 .NET Framework 4.x 核心库，尚未实现 type forward，暂不支持 .NET Standard/CoreCLR 核心库。
+- 准备：创建基于 .NET Framework 4.x 的类库（或在 Unity 中创建程序集），编写至少一个 `static` 入口方法并编译为 DLL。
+- 运行：在 Win64 下使用 `lean` 执行；如需在 H5 测试，请同步调整 [demo/h5/index.html](demo/h5/index.html) 中的加载逻辑。
+- 依赖： [demo/win64/dotnetframework](demo/win64/dotnetframework) 仅包含少量 DLL，如需额外框架 DLL，请使用 `-l <dll search path>` 指定搜索路径。
+
 ## 联系方式
 
 - 邮箱：leanclr#code-philosophy.com
