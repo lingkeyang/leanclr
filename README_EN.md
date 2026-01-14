@@ -8,12 +8,13 @@ LeanCLR is a lean, cross-platform implementation of the Common Language Runtime 
 
 ## Why LeanCLR
 
-CoreCLR, Mono, and IL2CPP are widely used; why build LeanCLR? Our motivations:
+CoreCLR, Mono, and IL2CPP are widely used; why build LeanCLR? The existing solutions have the following limitations:
 
 1. CoreCLR and Mono are relatively heavy, making it hard to simultaneously meet package size and memory constraints in extreme resource scenarios. LeanCLR is tightly designed and easy to embed; the single-thread build for Win64 or WebAssembly is about **600 KB**.
 1. IL2CPP is closed-source and AOT-only, with limited ECMA-335 coverage. On H5 and mini-game distribution targets, wasm binary size and post-load memory usage are often high.
-1. LeanCLR uses an AOT + Interpreter hybrid model, forgoing JIT. This ensures high compactness and cross-platform consistency, meeting the requirements of mobile and mini-game platforms.
-1. Compared with CoreCLR’s large codebase and Mono’s complexity and historical baggage, LeanCLR offers a cleaner, simpler codebase that is easier to customize and extend for specific needs.
+1. CoreCLR's codebase is large and Mono carries historical complexity, making it difficult to modify and optimize.
+
+LeanCLR uses an AOT + Interpreter hybrid model, forgoing JIT. This ensures high compactness and cross-platform consistency, meeting the requirements of mobile and mini-game platforms. LeanCLR's codebase is cleaner and simpler, making it easier to customize and extend.
 
 ## Features & Advantages
 
@@ -29,8 +30,6 @@ CoreCLR, Mono, and IL2CPP are widely used; why build LeanCLR? Our motivations:
 - Clean and simple code organization: easy to read, modify, and optimize.
 
 ## Project Status
-
-**The code is expected to be open-sourced by 2026-03-31. Development progress will be updated regularly.**
 
 - ECMA-335 coverage: less complete than Mono, but more complete than `il2cpp + hybridclr`; only a subset of CoreCLR extensions are implemented.
 - TODO:
@@ -90,7 +89,7 @@ Usage:
 
 ### Testing custom code
 
-- Scope: validated only with .NET Framework 4.x core libraries; type forwarding is not implemented, so .NET Standard/CoreCLR core libs are unsupported.
+- Scope: validated only with .NET Standard 2.x/.Net Framework 4.x core libraries.
 
 - Dependencies: [demo/win64/dotnetframework](demo/win64/dotnetframework) ships only a few DLLs. If you need more framework DLLs, add their search paths with `-l <dll search path>`.
 
