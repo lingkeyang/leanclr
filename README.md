@@ -31,8 +31,6 @@ LeanCLR 采用 AOT + Interpreter 混合模式，放弃 JIT，实现高度紧凑�
 
 ## 项目状态
 
-**代码预计在 2026-03-31 前开源，开发进度将持续更新。**
-
 - 基本覆盖 ECMA-335；完整度低于 Mono，高于 `il2cpp + hybridclr`；仅部分实现 CoreCLR 扩展。
 - 待办（TODO）：
   - GC

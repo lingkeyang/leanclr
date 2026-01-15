@@ -53,7 +53,7 @@ namespace test
 
         public static string Test1()
         {
-            return "Hello, World!";
+            return "Hello, World!你好啊";
         }
 
         public static int Test2()
