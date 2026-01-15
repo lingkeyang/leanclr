@@ -64,7 +64,7 @@ This demo demonstrates the complete workflow of running .NET assemblies in the b
 
 ### Testing Workflow
 
-1. Open [demo/test/Tests.sln](../test/Tests.sln) and modify `App::Main` or other code
+1. Open [src/tests/managed/managed.sln](../../src/tests/managed/managed.sln) and modify `App::Main` or other code in the `CoreTests` project
 2. Build to generate `CoreTests.dll` (Debug or Release)
 3. Rename the output `CoreTests.dll` to `CoreTests.dll.bytes` and copy it to this directory
 4. Refresh the page and re-run the demo

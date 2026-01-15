@@ -253,5 +253,5 @@ build-wasm.bat
 ## 联系方式
 
 - 邮箱：leanclr#code-philosophy.com
-- discord 频道： `https://discord.gg/esAYcM6RDQ`
+- discord 频道： <https://discord.gg/esAYcM6RDQ>
 - QQ群：1047250380

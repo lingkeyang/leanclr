@@ -72,7 +72,7 @@ demo/win64/
 
 ### Testing Workflow
 
-1. Open [demo/test/Tests.sln](../test/Tests.sln) and modify `App::Main` or other code
+1. Open [src/tests/managed/managed.sln](../../src/tests/managed/managed.sln) and modify `App::Main` or other code in the `CoreTests` project
 2. Build to generate `CoreTests.dll` (Debug or Release)
 3. Copy the output `CoreTests.dll` to this directory, replacing the original file
 4. Run `run.bat` to verify the results

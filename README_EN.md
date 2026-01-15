@@ -253,5 +253,5 @@ Access `index.html` through an HTTP server to run the demo in a browser. See [de
 ## Contact
 
 - Email: leanclr#code-philosophy.com
-- Discord: `https://discord.gg/esAYcM6RDQ`
+- Discord: <https://discord.gg/esAYcM6RDQ>
 - QQ Group: 1047250380
