@@ -110,9 +110,8 @@ const metadata::RtMethodInfo* String::get_redirected_ctor_method()
 
 RtString* String::create_string_from_utf16chars(const uint16_t* str, int32_t length)
 {
-    RtString* newString = (RtString*)gc::GarbageCollector::allocate_object_not_contains_references(g_stringClass, sizeof(RtString) - OVER_SIZE_OF_STRING +
-                                                                                                                      length * sizeof(uint16_t));
-    newString->length = static_cast<int32_t>(length);
+    RtString* newString = fast_allocate_string(length);
+
     std::memcpy(&newString->first_char, str, length * sizeof(uint16_t));
     return newString;
 }
@@ -132,35 +131,31 @@ RtString* String::create_string_from_utf8chars(const char* str, int32_t length)
         utf8::unchecked::append16(codepoint, std::back_inserter(utf16_buffer));
     }
 
-    // Allocate the string object
-    size_t utf16_length = utf16_buffer.size();
-    RtString* newString = (RtString*)gc::GarbageCollector::allocate_object_not_contains_references(g_stringClass, sizeof(RtString) - OVER_SIZE_OF_STRING +
-                                                                                                                      utf16_length * sizeof(uint16_t));
-    newString->length = utf16_length;
-    std::memcpy(&newString->first_char, utf16_buffer.data(), utf16_length * sizeof(uint16_t));
-    return newString;
+    return create_string_from_utf16chars(utf16_buffer.data(), static_cast<int32_t>(utf16_buffer.size()));
 }
 
 int32_t String::get_hash_code(RtString* str)
 {
     int32_t hash = 5381;
-    const int32_t* int32_data_ptr = reinterpret_cast<const int32_t*>(&str->first_char);
+    const Utf16Char* char_data_ptr = &str->first_char;
+    const int32_t* int32_data_ptr = reinterpret_cast<const int32_t*>(char_data_ptr);
+    assert((size_t)int32_data_ptr % 4 == 0);
     for (int32_t i = 0, n = str->length / 2; i < n; ++i)
     {
         hash = ((hash << 5) + hash) + int32_data_ptr[i];
     }
     if (str->length % 2 != 0)
     {
-        const uint16_t* char_data_ptr = reinterpret_cast<const uint16_t*>(&str->first_char);
-        hash = ((hash << 5) + hash) + char_data_ptr[str->length - 1];
+        hash = ((hash << 5) + hash) + static_cast<int32_t>(char_data_ptr[str->length - 1]);
     }
     return hash;
 }
 
 RtString* String::fast_allocate_string(int32_t length)
 {
-    RtString* newString = (RtString*)gc::GarbageCollector::allocate_object_not_contains_references(g_stringClass, sizeof(RtString) - OVER_SIZE_OF_STRING +
-                                                                                                                      length * sizeof(uint16_t));
+    // String::GetLegacyNonRandomizedHashCode need zero terminated string, so we allocate one extra character
+    RtString* newString = (RtString*)gc::GarbageCollector::allocate_object_not_contains_references(
+        g_stringClass, sizeof(RtString) - OVER_SIZE_OF_STRING + sizeof(uint16_t) /* extra one character*/ + length * sizeof(uint16_t));
     newString->length = static_cast<int32_t>(length);
     return newString;
 }
