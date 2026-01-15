@@ -664,6 +664,7 @@ metadata::RtClass* Class::get_generic_base_klass_or_self(metadata::RtClass* klas
 
 bool Class::has_class_parent_fast(metadata::RtClass* klass, metadata::RtClass* parent)
 {
+    assert(has_initialized_part(klass, metadata::RtClassInitPart::SuperTypes));
     return parent->hierarchy_depth <= klass->hierarchy_depth && klass->super_types[parent->hierarchy_depth] == parent;
 }
 
@@ -2133,6 +2134,7 @@ RtResult<metadata::RtClass*> Class::find_nested_class_by_name(metadata::RtClass*
 
 bool Class::is_assignable_from_class(metadata::RtClass* fromClass, metadata::RtClass* toClass)
 {
+    assert(has_initialized_part(fromClass, metadata::RtClassInitPart::SuperTypes));
     if (fromClass == toClass)
     {
         return true;
@@ -2225,6 +2227,7 @@ bool Class::is_assignable_from_class(metadata::RtClass* fromClass, metadata::RtC
 
 bool Class::is_assignable_from_interface(metadata::RtClass* fromClass, metadata::RtClass* toClass)
 {
+    assert(has_initialized_part(fromClass, metadata::RtClassInitPart::SuperTypes));
     metadata::RtClass* currentClass = fromClass;
     while (currentClass != nullptr)
     {
@@ -2242,6 +2245,7 @@ bool Class::is_assignable_from_interface(metadata::RtClass* fromClass, metadata:
 
 bool Class::is_assignable_from(metadata::RtClass* fromClass, metadata::RtClass* toClass)
 {
+    assert(has_initialized_part(fromClass, metadata::RtClassInitPart::SuperTypes));
     if (fromClass == toClass)
     {
         return true;
