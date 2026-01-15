@@ -17,6 +17,7 @@
 #include "vm/rt_exception.h"
 #include "vm/property.h"
 #include "vm/field.h"
+#include "metadata/metadata_name.h"
 
 #ifdef _WIN32
 #include <windows.h>
@@ -198,7 +199,6 @@ static int run(const std::string& dll_name, const std::vector<std::string>& dll_
             return -1;
         }
 
-
         const metadata::RtPropertyInfo* prop = vm::Class::get_property_for_name(ex->klass, "StackTrace", true);
         assert(prop);
         auto ret = vm::Runtime::invoke_with_run_cctor(prop->get_method, ex, nullptr);
@@ -210,25 +210,30 @@ static int run(const std::string& dll_name, const std::vector<std::string>& dll_
 
         std::cerr << std::endl;
         std::cerr << std::endl;
+
+        utils::StringBuilder sb;
+
+        metadata::MetadataName::append_klass_full_name(sb, ex->klass).unwrap();
+        sb.append_cstr(": ");
+        sb.sure_null_terminator_but_not_append();
+        std::cerr << sb.as_cstr();
+
+        sb.clear();
+        vm::RtString* message = ex->message;
+        if (message)
         {
-            utils::StringBuilder sb;
-            vm::RtString* message = ex->message;
-            if (message)
-            {
-                sb.append_utf16_str(&message->first_char, message->length);
-            }
-            else
-            {
-                sb.sure_null_terminator_but_not_append();
-            }
-            std::cerr << "Exception message: " << sb.as_cstr() << std::endl;
+            sb.append_utf16_str(&message->first_char, message->length);
         }
+        else
         {
-            vm::RtString* stack_trace_str = reinterpret_cast<vm::RtString*>(ret.unwrap());
-            utils::StringBuilder sb;
-            sb.append_utf16_str(&stack_trace_str->first_char, stack_trace_str->length);
-            std::cerr << sb.as_cstr() << std::endl;
+            sb.sure_null_terminator_but_not_append();
         }
+        std::cerr << sb.as_cstr() << std::endl << std::endl;
+
+        sb.clear();
+        vm::RtString* stack_trace_str = reinterpret_cast<vm::RtString*>(ret.unwrap());
+        sb.append_utf16_str(&stack_trace_str->first_char, stack_trace_str->length);
+        std::cerr << sb.as_cstr() << std::endl << std::endl;
 
         return -1;
     }
