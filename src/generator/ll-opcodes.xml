@@ -769,8 +769,8 @@
         <param name="src" arg="src" arg_kind="stack"/>
         <param name="dst" arg="dst" arg_kind="stack"/>
     </tplopcode>
-    <opcode name="ConvOvfI8I4" base="ConvOvfI8" prefix="3"/>
-    <opcode name="ConvOvfI8I8" base="ConvOvfI8" prefix="3"/>
+    <!-- <opcode name="ConvOvfI8I4" base="ConvOvfI8" prefix="3"/>
+    <opcode name="ConvOvfI8I8" base="ConvOvfI8" prefix="3"/> -->
     <opcode name="ConvOvfI8R4" base="ConvOvfI8" prefix="3"/>
     <opcode name="ConvOvfI8R8" base="ConvOvfI8" prefix="3"/>
 
@@ -841,7 +841,7 @@
         <param name="src" arg="src" arg_kind="stack"/>
         <param name="dst" arg="dst" arg_kind="stack"/>
     </tplopcode>
-    <opcode name="ConvOvfI8UnI4" base="ConvOvfI8Un" prefix="3"/>
+    <!-- <opcode name="ConvOvfI8UnI4" base="ConvOvfI8Un" prefix="3"/> -->
     <opcode name="ConvOvfI8UnI8" base="ConvOvfI8Un" prefix="3"/>
     <opcode name="ConvOvfI8UnR4" base="ConvOvfI8Un" prefix="3"/>
     <opcode name="ConvOvfI8UnR8" base="ConvOvfI8Un" prefix="3"/>
@@ -850,7 +850,7 @@
         <param name="src" arg="src" arg_kind="stack"/>
         <param name="dst" arg="dst" arg_kind="stack"/>
     </tplopcode>
-    <opcode name="ConvOvfU8UnI4" base="ConvOvfU8Un" prefix="3"/>
+    <!-- <opcode name="ConvOvfU8UnI4" base="ConvOvfU8Un" prefix="3"/> -->
     <!-- <opcode name="ConvOvfU8UnI8" base="ConvOvfU8Un" prefix="3"/> -->
     <opcode name="ConvOvfU8UnR4" base="ConvOvfU8Un" prefix="3"/>
     <opcode name="ConvOvfU8UnR8" base="ConvOvfU8Un" prefix="3"/>
@@ -1507,7 +1507,7 @@
     <opcode name="RetI8_S" base="Ret" variant="i8" prefix="0"/>
     <opcode name="RetAny_S" base="Ret" variant="any" size_param="1" prefix="0"/>
     <tplopcode name="RetNop" hlopcode="Ret"/>
-    <opcode name="RetNop" base="RetNop" prefix="0"/>
+    <opcode name="RetNop_S" base="RetNop" prefix="0"/>
 
     <tplopcode name="CallInterp" hlopcode="Call">
         <param name="method_idx" arg="resolved_data_index" arg_kind="resolved_data"/>

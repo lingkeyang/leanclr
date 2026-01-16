@@ -345,8 +345,6 @@ enum class OpCodeEnum
     ConvOvfU4I8,
     ConvOvfU4R4,
     ConvOvfU4R8,
-    ConvOvfI8I4,
-    ConvOvfI8I8,
     ConvOvfI8R4,
     ConvOvfI8R8,
     ConvOvfU8I4,
@@ -376,11 +374,9 @@ enum class OpCodeEnum
     ConvOvfU4UnI8,
     ConvOvfU4UnR4,
     ConvOvfU4UnR8,
-    ConvOvfI8UnI4,
     ConvOvfI8UnI8,
     ConvOvfI8UnR4,
     ConvOvfI8UnR8,
-    ConvOvfU8UnI4,
     ConvOvfU8UnR4,
     ConvOvfU8UnR8,
     CeqI4,
@@ -623,7 +619,7 @@ enum class OpCodeEnum
     RetI4Short,
     RetI8Short,
     RetAnyShort,
-    RetNop,
+    RetNopShort,
     CallInterp,
     CallInterpShort,
     CallVirtInterp,
@@ -887,7 +883,7 @@ enum class OpCodeValue0 : uint8_t
     RetI4Short = 0xD3,
     RetI8Short = 0xD4,
     RetAnyShort = 0xD5,
-    RetNop = 0xD6,
+    RetNopShort = 0xD6,
     CallInterpShort = 0xD7,
     CallVirtInterpShort = 0xD8,
     CallInternalCallShort = 0xD9,
@@ -1279,78 +1275,74 @@ enum class OpCodeValue3 : uint8_t
     ConvOvfU4I8 = 0x29,
     ConvOvfU4R4 = 0x2A,
     ConvOvfU4R8 = 0x2B,
-    ConvOvfI8I4 = 0x2C,
-    ConvOvfI8I8 = 0x2D,
-    ConvOvfI8R4 = 0x2E,
-    ConvOvfI8R8 = 0x2F,
-    ConvOvfU8I4 = 0x30,
-    ConvOvfU8I8 = 0x31,
-    ConvOvfU8R4 = 0x32,
-    ConvOvfU8R8 = 0x33,
-    ConvOvfI1UnI4 = 0x34,
-    ConvOvfI1UnI8 = 0x35,
-    ConvOvfI1UnR4 = 0x36,
-    ConvOvfI1UnR8 = 0x37,
-    ConvOvfU1UnI4 = 0x38,
-    ConvOvfU1UnI8 = 0x39,
-    ConvOvfU1UnR4 = 0x3A,
-    ConvOvfU1UnR8 = 0x3B,
-    ConvOvfI2UnI4 = 0x3C,
-    ConvOvfI2UnI8 = 0x3D,
-    ConvOvfI2UnR4 = 0x3E,
-    ConvOvfI2UnR8 = 0x3F,
-    ConvOvfU2UnI4 = 0x40,
-    ConvOvfU2UnI8 = 0x41,
-    ConvOvfU2UnR4 = 0x42,
-    ConvOvfU2UnR8 = 0x43,
-    ConvOvfI4UnI4 = 0x44,
-    ConvOvfI4UnI8 = 0x45,
-    ConvOvfI4UnR4 = 0x46,
-    ConvOvfI4UnR8 = 0x47,
-    ConvOvfU4UnI8 = 0x48,
-    ConvOvfU4UnR4 = 0x49,
-    ConvOvfU4UnR8 = 0x4A,
-    ConvOvfI8UnI4 = 0x4B,
-    ConvOvfI8UnI8 = 0x4C,
-    ConvOvfI8UnR4 = 0x4D,
-    ConvOvfI8UnR8 = 0x4E,
-    ConvOvfU8UnI4 = 0x4F,
-    ConvOvfU8UnR4 = 0x50,
-    ConvOvfU8UnR8 = 0x51,
-    InitObjI2Unaligned = 0x52,
-    InitObjI4Unaligned = 0x53,
-    InitObjI8Unaligned = 0x54,
-    LdfldI1Large = 0x55,
-    LdfldU1Large = 0x56,
-    LdfldI2Large = 0x57,
-    LdfldI2Unaligned = 0x58,
-    LdfldU2Large = 0x59,
-    LdfldU2Unaligned = 0x5A,
-    LdfldI4Large = 0x5B,
-    LdfldI4Unaligned = 0x5C,
-    LdfldI8Large = 0x5D,
-    LdfldI8Unaligned = 0x5E,
-    LdfldAnyLarge = 0x5F,
-    LdvfldI1Large = 0x60,
-    LdvfldU1Large = 0x61,
-    LdvfldI2Large = 0x62,
-    LdvfldI2Unaligned = 0x63,
-    LdvfldU2Large = 0x64,
-    LdvfldU2Unaligned = 0x65,
-    LdvfldI4Large = 0x66,
-    LdvfldI4Unaligned = 0x67,
-    LdvfldI8Large = 0x68,
-    LdvfldI8Unaligned = 0x69,
-    LdvfldAnyLarge = 0x6A,
-    LdfldaLarge = 0x6B,
-    StfldI1Large = 0x6C,
-    StfldI2Large = 0x6D,
-    StfldI2Unaligned = 0x6E,
-    StfldI4Large = 0x6F,
-    StfldI4Unaligned = 0x70,
-    StfldI8Large = 0x71,
-    StfldI8Unaligned = 0x72,
-    StfldAnyLarge = 0x73,
+    ConvOvfI8R4 = 0x2C,
+    ConvOvfI8R8 = 0x2D,
+    ConvOvfU8I4 = 0x2E,
+    ConvOvfU8I8 = 0x2F,
+    ConvOvfU8R4 = 0x30,
+    ConvOvfU8R8 = 0x31,
+    ConvOvfI1UnI4 = 0x32,
+    ConvOvfI1UnI8 = 0x33,
+    ConvOvfI1UnR4 = 0x34,
+    ConvOvfI1UnR8 = 0x35,
+    ConvOvfU1UnI4 = 0x36,
+    ConvOvfU1UnI8 = 0x37,
+    ConvOvfU1UnR4 = 0x38,
+    ConvOvfU1UnR8 = 0x39,
+    ConvOvfI2UnI4 = 0x3A,
+    ConvOvfI2UnI8 = 0x3B,
+    ConvOvfI2UnR4 = 0x3C,
+    ConvOvfI2UnR8 = 0x3D,
+    ConvOvfU2UnI4 = 0x3E,
+    ConvOvfU2UnI8 = 0x3F,
+    ConvOvfU2UnR4 = 0x40,
+    ConvOvfU2UnR8 = 0x41,
+    ConvOvfI4UnI4 = 0x42,
+    ConvOvfI4UnI8 = 0x43,
+    ConvOvfI4UnR4 = 0x44,
+    ConvOvfI4UnR8 = 0x45,
+    ConvOvfU4UnI8 = 0x46,
+    ConvOvfU4UnR4 = 0x47,
+    ConvOvfU4UnR8 = 0x48,
+    ConvOvfI8UnI8 = 0x49,
+    ConvOvfI8UnR4 = 0x4A,
+    ConvOvfI8UnR8 = 0x4B,
+    ConvOvfU8UnR4 = 0x4C,
+    ConvOvfU8UnR8 = 0x4D,
+    InitObjI2Unaligned = 0x4E,
+    InitObjI4Unaligned = 0x4F,
+    InitObjI8Unaligned = 0x50,
+    LdfldI1Large = 0x51,
+    LdfldU1Large = 0x52,
+    LdfldI2Large = 0x53,
+    LdfldI2Unaligned = 0x54,
+    LdfldU2Large = 0x55,
+    LdfldU2Unaligned = 0x56,
+    LdfldI4Large = 0x57,
+    LdfldI4Unaligned = 0x58,
+    LdfldI8Large = 0x59,
+    LdfldI8Unaligned = 0x5A,
+    LdfldAnyLarge = 0x5B,
+    LdvfldI1Large = 0x5C,
+    LdvfldU1Large = 0x5D,
+    LdvfldI2Large = 0x5E,
+    LdvfldI2Unaligned = 0x5F,
+    LdvfldU2Large = 0x60,
+    LdvfldU2Unaligned = 0x61,
+    LdvfldI4Large = 0x62,
+    LdvfldI4Unaligned = 0x63,
+    LdvfldI8Large = 0x64,
+    LdvfldI8Unaligned = 0x65,
+    LdvfldAnyLarge = 0x66,
+    LdfldaLarge = 0x67,
+    StfldI1Large = 0x68,
+    StfldI2Large = 0x69,
+    StfldI2Unaligned = 0x6A,
+    StfldI4Large = 0x6B,
+    StfldI4Unaligned = 0x6C,
+    StfldI8Large = 0x6D,
+    StfldI8Unaligned = 0x6E,
+    StfldAnyLarge = 0x6F,
 
     //}}LOW_LEVEL_OPCODE33
 };
@@ -4426,26 +4418,6 @@ struct ConvOvfU4R8
     uint8_t __padding_7;
 };
 
-struct ConvOvfI8I4
-{
-    uint8_t __prefix;
-    uint8_t __code;
-    uint16_t src;
-    uint16_t dst;
-    uint8_t __padding_6;
-    uint8_t __padding_7;
-};
-
-struct ConvOvfI8I8
-{
-    uint8_t __prefix;
-    uint8_t __code;
-    uint16_t src;
-    uint16_t dst;
-    uint8_t __padding_6;
-    uint8_t __padding_7;
-};
-
 struct ConvOvfI8R4
 {
     uint8_t __prefix;
@@ -4736,16 +4708,6 @@ struct ConvOvfU4UnR8
     uint8_t __padding_7;
 };
 
-struct ConvOvfI8UnI4
-{
-    uint8_t __prefix;
-    uint8_t __code;
-    uint16_t src;
-    uint16_t dst;
-    uint8_t __padding_6;
-    uint8_t __padding_7;
-};
-
 struct ConvOvfI8UnI8
 {
     uint8_t __prefix;
@@ -4767,16 +4729,6 @@ struct ConvOvfI8UnR4
 };
 
 struct ConvOvfI8UnR8
-{
-    uint8_t __prefix;
-    uint8_t __code;
-    uint16_t src;
-    uint16_t dst;
-    uint8_t __padding_6;
-    uint8_t __padding_7;
-};
-
-struct ConvOvfU8UnI4
 {
     uint8_t __prefix;
     uint8_t __code;
@@ -6975,7 +6927,7 @@ struct RetAnyShort
     uint8_t __padding_3;
 };
 
-struct RetNop
+struct RetNopShort
 {
     uint8_t __code;
     uint8_t __padding_1;
@@ -7337,6 +7289,7 @@ struct GetEnumLongHashCode
     uint8_t __padding_6;
     uint8_t __padding_7;
 };
+
 
 //}}LOW_LEVEL_INSTRUCTION_STRUCTSS
 

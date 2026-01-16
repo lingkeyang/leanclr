@@ -830,7 +830,7 @@ RtResultVoid Transformer::transform_instructions()
                 }
                 else if (hl_inst->get_var_src_eval_stack_idx() == 0)
                 {
-                    ll_inst->set_opcode(OpCodeEnum::RetNop);
+                    ll_inst->set_opcode(OpCodeEnum::RetNopShort);
                 }
                 else
                 {
@@ -1219,7 +1219,7 @@ RtResultVoid Transformer::transform_instructions()
                 break;
 
             case hl::OpCodeEnum::ConvOvfI8:
-                RET_ERR_ON_FAIL(transform_conv(ll_inst, hl_inst, OpCodeEnum::ConvOvfI8I4, OpCodeEnum::Nop, OpCodeEnum::ConvOvfI8R4, OpCodeEnum::ConvOvfI8R8));
+                RET_ERR_ON_FAIL(transform_conv(ll_inst, hl_inst, OpCodeEnum::Nop, OpCodeEnum::Nop, OpCodeEnum::ConvOvfI8R4, OpCodeEnum::ConvOvfI8R8));
                 add = ll_inst->get_opcode() != OpCodeEnum::Nop;
                 break;
 
@@ -1229,7 +1229,7 @@ RtResultVoid Transformer::transform_instructions()
                 break;
 
             case hl::OpCodeEnum::ConvOvfI:
-                RET_ERR_ON_FAIL(transform_conv(ll_inst, hl_inst, utils::Platform::select_arch(OpCodeEnum::Nop, OpCodeEnum::ConvOvfI8I4),
+                RET_ERR_ON_FAIL(transform_conv(ll_inst, hl_inst, utils::Platform::select_arch(OpCodeEnum::Nop, OpCodeEnum::Nop),
                                                utils::Platform::select_arch(OpCodeEnum::ConvOvfI4I8, OpCodeEnum::Nop),
                                                utils::Platform::select_arch(OpCodeEnum::ConvOvfI4R4, OpCodeEnum::ConvOvfI8R4),
                                                utils::Platform::select_arch(OpCodeEnum::ConvOvfI4R8, OpCodeEnum::ConvOvfI8R8)));
@@ -1275,25 +1275,25 @@ RtResultVoid Transformer::transform_instructions()
                 break;
 
             case hl::OpCodeEnum::ConvOvfI8Un:
-                RET_ERR_ON_FAIL(transform_conv(ll_inst, hl_inst, OpCodeEnum::ConvOvfI8UnI4, OpCodeEnum::ConvOvfI8UnI8, OpCodeEnum::ConvOvfI8UnR4,
+                RET_ERR_ON_FAIL(transform_conv(ll_inst, hl_inst, OpCodeEnum::Nop, OpCodeEnum::ConvOvfI8UnI8, OpCodeEnum::ConvOvfI8UnR4,
                                                OpCodeEnum::ConvOvfI8UnR8));
                 break;
 
             case hl::OpCodeEnum::ConvOvfU8Un:
                 RET_ERR_ON_FAIL(
-                    transform_conv(ll_inst, hl_inst, OpCodeEnum::ConvOvfU8UnI4, OpCodeEnum::Nop, OpCodeEnum::ConvOvfU8UnR4, OpCodeEnum::ConvOvfU8UnR8));
+                    transform_conv(ll_inst, hl_inst, OpCodeEnum::Nop, OpCodeEnum::Nop, OpCodeEnum::ConvOvfU8UnR4, OpCodeEnum::ConvOvfU8UnR8));
                 add = ll_inst->get_opcode() != OpCodeEnum::Nop;
                 break;
 
             case hl::OpCodeEnum::ConvOvfIUn:
-                RET_ERR_ON_FAIL(transform_conv(ll_inst, hl_inst, utils::Platform::select_arch(OpCodeEnum::ConvOvfI4UnI4, OpCodeEnum::ConvOvfI8UnI4),
+                RET_ERR_ON_FAIL(transform_conv(ll_inst, hl_inst, utils::Platform::select_arch(OpCodeEnum::ConvOvfI4UnI4, OpCodeEnum::Nop),
                                                utils::Platform::select_arch(OpCodeEnum::ConvOvfI4UnI8, OpCodeEnum::ConvOvfI8UnI8),
                                                utils::Platform::select_arch(OpCodeEnum::ConvOvfI4UnR4, OpCodeEnum::ConvOvfI8UnR4),
                                                utils::Platform::select_arch(OpCodeEnum::ConvOvfI4UnR8, OpCodeEnum::ConvOvfI8UnR8)));
                 break;
 
             case hl::OpCodeEnum::ConvOvfUUn:
-                RET_ERR_ON_FAIL(transform_conv(ll_inst, hl_inst, utils::Platform::select_arch(OpCodeEnum::Nop, OpCodeEnum::ConvOvfU8UnI4),
+                RET_ERR_ON_FAIL(transform_conv(ll_inst, hl_inst, utils::Platform::select_arch(OpCodeEnum::Nop, OpCodeEnum::Nop),
                                                utils::Platform::select_arch(OpCodeEnum::ConvOvfU4UnI8, OpCodeEnum::Nop),
                                                utils::Platform::select_arch(OpCodeEnum::ConvOvfU4UnR4, OpCodeEnum::ConvOvfU8UnR4),
                                                utils::Platform::select_arch(OpCodeEnum::ConvOvfU4UnR8, OpCodeEnum::ConvOvfU8UnR8)));

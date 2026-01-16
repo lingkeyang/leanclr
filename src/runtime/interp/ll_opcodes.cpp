@@ -346,8 +346,6 @@ size_t OpCodes::s_opsizes[static_cast<size_t>(OpCodeEnum::__Count)] = {
     sizeof(ConvOvfU4I8),
     sizeof(ConvOvfU4R4),
     sizeof(ConvOvfU4R8),
-    sizeof(ConvOvfI8I4),
-    sizeof(ConvOvfI8I8),
     sizeof(ConvOvfI8R4),
     sizeof(ConvOvfI8R8),
     sizeof(ConvOvfU8I4),
@@ -377,11 +375,9 @@ size_t OpCodes::s_opsizes[static_cast<size_t>(OpCodeEnum::__Count)] = {
     sizeof(ConvOvfU4UnI8),
     sizeof(ConvOvfU4UnR4),
     sizeof(ConvOvfU4UnR8),
-    sizeof(ConvOvfI8UnI4),
     sizeof(ConvOvfI8UnI8),
     sizeof(ConvOvfI8UnR4),
     sizeof(ConvOvfI8UnR8),
-    sizeof(ConvOvfU8UnI4),
     sizeof(ConvOvfU8UnR4),
     sizeof(ConvOvfU8UnR8),
     sizeof(CeqI4),
@@ -624,7 +620,7 @@ size_t OpCodes::s_opsizes[static_cast<size_t>(OpCodeEnum::__Count)] = {
     sizeof(RetI4Short),
     sizeof(RetI8Short),
     sizeof(RetAnyShort),
-    sizeof(RetNop),
+    sizeof(RetNopShort),
     sizeof(CallInterp),
     sizeof(CallInterpShort),
     sizeof(CallVirtInterp),
@@ -3710,29 +3706,11 @@ uint8_t* OpCodes::write_instruction_to_data(uint8_t* codes, const GeneralInst& i
         ir->dst = (uint16_t)inst.get_var_dst_eval_stack_idx();
         return codes + sizeof(ConvOvfU4R8);
     }
-    case OpCodeEnum::ConvOvfI8I4:
-    {
-        auto ir = (ConvOvfI8I4*)codes;
-        ir->__prefix = 253;
-        ir->__code = 44;
-        ir->src = (uint16_t)inst.get_var_src_eval_stack_idx();
-        ir->dst = (uint16_t)inst.get_var_dst_eval_stack_idx();
-        return codes + sizeof(ConvOvfI8I4);
-    }
-    case OpCodeEnum::ConvOvfI8I8:
-    {
-        auto ir = (ConvOvfI8I8*)codes;
-        ir->__prefix = 253;
-        ir->__code = 45;
-        ir->src = (uint16_t)inst.get_var_src_eval_stack_idx();
-        ir->dst = (uint16_t)inst.get_var_dst_eval_stack_idx();
-        return codes + sizeof(ConvOvfI8I8);
-    }
     case OpCodeEnum::ConvOvfI8R4:
     {
         auto ir = (ConvOvfI8R4*)codes;
         ir->__prefix = 253;
-        ir->__code = 46;
+        ir->__code = 44;
         ir->src = (uint16_t)inst.get_var_src_eval_stack_idx();
         ir->dst = (uint16_t)inst.get_var_dst_eval_stack_idx();
         return codes + sizeof(ConvOvfI8R4);
@@ -3741,7 +3719,7 @@ uint8_t* OpCodes::write_instruction_to_data(uint8_t* codes, const GeneralInst& i
     {
         auto ir = (ConvOvfI8R8*)codes;
         ir->__prefix = 253;
-        ir->__code = 47;
+        ir->__code = 45;
         ir->src = (uint16_t)inst.get_var_src_eval_stack_idx();
         ir->dst = (uint16_t)inst.get_var_dst_eval_stack_idx();
         return codes + sizeof(ConvOvfI8R8);
@@ -3750,7 +3728,7 @@ uint8_t* OpCodes::write_instruction_to_data(uint8_t* codes, const GeneralInst& i
     {
         auto ir = (ConvOvfU8I4*)codes;
         ir->__prefix = 253;
-        ir->__code = 48;
+        ir->__code = 46;
         ir->src = (uint16_t)inst.get_var_src_eval_stack_idx();
         ir->dst = (uint16_t)inst.get_var_dst_eval_stack_idx();
         return codes + sizeof(ConvOvfU8I4);
@@ -3759,7 +3737,7 @@ uint8_t* OpCodes::write_instruction_to_data(uint8_t* codes, const GeneralInst& i
     {
         auto ir = (ConvOvfU8I8*)codes;
         ir->__prefix = 253;
-        ir->__code = 49;
+        ir->__code = 47;
         ir->src = (uint16_t)inst.get_var_src_eval_stack_idx();
         ir->dst = (uint16_t)inst.get_var_dst_eval_stack_idx();
         return codes + sizeof(ConvOvfU8I8);
@@ -3768,7 +3746,7 @@ uint8_t* OpCodes::write_instruction_to_data(uint8_t* codes, const GeneralInst& i
     {
         auto ir = (ConvOvfU8R4*)codes;
         ir->__prefix = 253;
-        ir->__code = 50;
+        ir->__code = 48;
         ir->src = (uint16_t)inst.get_var_src_eval_stack_idx();
         ir->dst = (uint16_t)inst.get_var_dst_eval_stack_idx();
         return codes + sizeof(ConvOvfU8R4);
@@ -3777,7 +3755,7 @@ uint8_t* OpCodes::write_instruction_to_data(uint8_t* codes, const GeneralInst& i
     {
         auto ir = (ConvOvfU8R8*)codes;
         ir->__prefix = 253;
-        ir->__code = 51;
+        ir->__code = 49;
         ir->src = (uint16_t)inst.get_var_src_eval_stack_idx();
         ir->dst = (uint16_t)inst.get_var_dst_eval_stack_idx();
         return codes + sizeof(ConvOvfU8R8);
@@ -3786,7 +3764,7 @@ uint8_t* OpCodes::write_instruction_to_data(uint8_t* codes, const GeneralInst& i
     {
         auto ir = (ConvOvfI1UnI4*)codes;
         ir->__prefix = 253;
-        ir->__code = 52;
+        ir->__code = 50;
         ir->src = (uint16_t)inst.get_var_src_eval_stack_idx();
         ir->dst = (uint16_t)inst.get_var_dst_eval_stack_idx();
         return codes + sizeof(ConvOvfI1UnI4);
@@ -3795,7 +3773,7 @@ uint8_t* OpCodes::write_instruction_to_data(uint8_t* codes, const GeneralInst& i
     {
         auto ir = (ConvOvfI1UnI8*)codes;
         ir->__prefix = 253;
-        ir->__code = 53;
+        ir->__code = 51;
         ir->src = (uint16_t)inst.get_var_src_eval_stack_idx();
         ir->dst = (uint16_t)inst.get_var_dst_eval_stack_idx();
         return codes + sizeof(ConvOvfI1UnI8);
@@ -3804,7 +3782,7 @@ uint8_t* OpCodes::write_instruction_to_data(uint8_t* codes, const GeneralInst& i
     {
         auto ir = (ConvOvfI1UnR4*)codes;
         ir->__prefix = 253;
-        ir->__code = 54;
+        ir->__code = 52;
         ir->src = (uint16_t)inst.get_var_src_eval_stack_idx();
         ir->dst = (uint16_t)inst.get_var_dst_eval_stack_idx();
         return codes + sizeof(ConvOvfI1UnR4);
@@ -3813,7 +3791,7 @@ uint8_t* OpCodes::write_instruction_to_data(uint8_t* codes, const GeneralInst& i
     {
         auto ir = (ConvOvfI1UnR8*)codes;
         ir->__prefix = 253;
-        ir->__code = 55;
+        ir->__code = 53;
         ir->src = (uint16_t)inst.get_var_src_eval_stack_idx();
         ir->dst = (uint16_t)inst.get_var_dst_eval_stack_idx();
         return codes + sizeof(ConvOvfI1UnR8);
@@ -3822,7 +3800,7 @@ uint8_t* OpCodes::write_instruction_to_data(uint8_t* codes, const GeneralInst& i
     {
         auto ir = (ConvOvfU1UnI4*)codes;
         ir->__prefix = 253;
-        ir->__code = 56;
+        ir->__code = 54;
         ir->src = (uint16_t)inst.get_var_src_eval_stack_idx();
         ir->dst = (uint16_t)inst.get_var_dst_eval_stack_idx();
         return codes + sizeof(ConvOvfU1UnI4);
@@ -3831,7 +3809,7 @@ uint8_t* OpCodes::write_instruction_to_data(uint8_t* codes, const GeneralInst& i
     {
         auto ir = (ConvOvfU1UnI8*)codes;
         ir->__prefix = 253;
-        ir->__code = 57;
+        ir->__code = 55;
         ir->src = (uint16_t)inst.get_var_src_eval_stack_idx();
         ir->dst = (uint16_t)inst.get_var_dst_eval_stack_idx();
         return codes + sizeof(ConvOvfU1UnI8);
@@ -3840,7 +3818,7 @@ uint8_t* OpCodes::write_instruction_to_data(uint8_t* codes, const GeneralInst& i
     {
         auto ir = (ConvOvfU1UnR4*)codes;
         ir->__prefix = 253;
-        ir->__code = 58;
+        ir->__code = 56;
         ir->src = (uint16_t)inst.get_var_src_eval_stack_idx();
         ir->dst = (uint16_t)inst.get_var_dst_eval_stack_idx();
         return codes + sizeof(ConvOvfU1UnR4);
@@ -3849,7 +3827,7 @@ uint8_t* OpCodes::write_instruction_to_data(uint8_t* codes, const GeneralInst& i
     {
         auto ir = (ConvOvfU1UnR8*)codes;
         ir->__prefix = 253;
-        ir->__code = 59;
+        ir->__code = 57;
         ir->src = (uint16_t)inst.get_var_src_eval_stack_idx();
         ir->dst = (uint16_t)inst.get_var_dst_eval_stack_idx();
         return codes + sizeof(ConvOvfU1UnR8);
@@ -3858,7 +3836,7 @@ uint8_t* OpCodes::write_instruction_to_data(uint8_t* codes, const GeneralInst& i
     {
         auto ir = (ConvOvfI2UnI4*)codes;
         ir->__prefix = 253;
-        ir->__code = 60;
+        ir->__code = 58;
         ir->src = (uint16_t)inst.get_var_src_eval_stack_idx();
         ir->dst = (uint16_t)inst.get_var_dst_eval_stack_idx();
         return codes + sizeof(ConvOvfI2UnI4);
@@ -3867,7 +3845,7 @@ uint8_t* OpCodes::write_instruction_to_data(uint8_t* codes, const GeneralInst& i
     {
         auto ir = (ConvOvfI2UnI8*)codes;
         ir->__prefix = 253;
-        ir->__code = 61;
+        ir->__code = 59;
         ir->src = (uint16_t)inst.get_var_src_eval_stack_idx();
         ir->dst = (uint16_t)inst.get_var_dst_eval_stack_idx();
         return codes + sizeof(ConvOvfI2UnI8);
@@ -3876,7 +3854,7 @@ uint8_t* OpCodes::write_instruction_to_data(uint8_t* codes, const GeneralInst& i
     {
         auto ir = (ConvOvfI2UnR4*)codes;
         ir->__prefix = 253;
-        ir->__code = 62;
+        ir->__code = 60;
         ir->src = (uint16_t)inst.get_var_src_eval_stack_idx();
         ir->dst = (uint16_t)inst.get_var_dst_eval_stack_idx();
         return codes + sizeof(ConvOvfI2UnR4);
@@ -3885,7 +3863,7 @@ uint8_t* OpCodes::write_instruction_to_data(uint8_t* codes, const GeneralInst& i
     {
         auto ir = (ConvOvfI2UnR8*)codes;
         ir->__prefix = 253;
-        ir->__code = 63;
+        ir->__code = 61;
         ir->src = (uint16_t)inst.get_var_src_eval_stack_idx();
         ir->dst = (uint16_t)inst.get_var_dst_eval_stack_idx();
         return codes + sizeof(ConvOvfI2UnR8);
@@ -3894,7 +3872,7 @@ uint8_t* OpCodes::write_instruction_to_data(uint8_t* codes, const GeneralInst& i
     {
         auto ir = (ConvOvfU2UnI4*)codes;
         ir->__prefix = 253;
-        ir->__code = 64;
+        ir->__code = 62;
         ir->src = (uint16_t)inst.get_var_src_eval_stack_idx();
         ir->dst = (uint16_t)inst.get_var_dst_eval_stack_idx();
         return codes + sizeof(ConvOvfU2UnI4);
@@ -3903,7 +3881,7 @@ uint8_t* OpCodes::write_instruction_to_data(uint8_t* codes, const GeneralInst& i
     {
         auto ir = (ConvOvfU2UnI8*)codes;
         ir->__prefix = 253;
-        ir->__code = 65;
+        ir->__code = 63;
         ir->src = (uint16_t)inst.get_var_src_eval_stack_idx();
         ir->dst = (uint16_t)inst.get_var_dst_eval_stack_idx();
         return codes + sizeof(ConvOvfU2UnI8);
@@ -3912,7 +3890,7 @@ uint8_t* OpCodes::write_instruction_to_data(uint8_t* codes, const GeneralInst& i
     {
         auto ir = (ConvOvfU2UnR4*)codes;
         ir->__prefix = 253;
-        ir->__code = 66;
+        ir->__code = 64;
         ir->src = (uint16_t)inst.get_var_src_eval_stack_idx();
         ir->dst = (uint16_t)inst.get_var_dst_eval_stack_idx();
         return codes + sizeof(ConvOvfU2UnR4);
@@ -3921,7 +3899,7 @@ uint8_t* OpCodes::write_instruction_to_data(uint8_t* codes, const GeneralInst& i
     {
         auto ir = (ConvOvfU2UnR8*)codes;
         ir->__prefix = 253;
-        ir->__code = 67;
+        ir->__code = 65;
         ir->src = (uint16_t)inst.get_var_src_eval_stack_idx();
         ir->dst = (uint16_t)inst.get_var_dst_eval_stack_idx();
         return codes + sizeof(ConvOvfU2UnR8);
@@ -3930,7 +3908,7 @@ uint8_t* OpCodes::write_instruction_to_data(uint8_t* codes, const GeneralInst& i
     {
         auto ir = (ConvOvfI4UnI4*)codes;
         ir->__prefix = 253;
-        ir->__code = 68;
+        ir->__code = 66;
         ir->src = (uint16_t)inst.get_var_src_eval_stack_idx();
         ir->dst = (uint16_t)inst.get_var_dst_eval_stack_idx();
         return codes + sizeof(ConvOvfI4UnI4);
@@ -3939,7 +3917,7 @@ uint8_t* OpCodes::write_instruction_to_data(uint8_t* codes, const GeneralInst& i
     {
         auto ir = (ConvOvfI4UnI8*)codes;
         ir->__prefix = 253;
-        ir->__code = 69;
+        ir->__code = 67;
         ir->src = (uint16_t)inst.get_var_src_eval_stack_idx();
         ir->dst = (uint16_t)inst.get_var_dst_eval_stack_idx();
         return codes + sizeof(ConvOvfI4UnI8);
@@ -3948,7 +3926,7 @@ uint8_t* OpCodes::write_instruction_to_data(uint8_t* codes, const GeneralInst& i
     {
         auto ir = (ConvOvfI4UnR4*)codes;
         ir->__prefix = 253;
-        ir->__code = 70;
+        ir->__code = 68;
         ir->src = (uint16_t)inst.get_var_src_eval_stack_idx();
         ir->dst = (uint16_t)inst.get_var_dst_eval_stack_idx();
         return codes + sizeof(ConvOvfI4UnR4);
@@ -3957,7 +3935,7 @@ uint8_t* OpCodes::write_instruction_to_data(uint8_t* codes, const GeneralInst& i
     {
         auto ir = (ConvOvfI4UnR8*)codes;
         ir->__prefix = 253;
-        ir->__code = 71;
+        ir->__code = 69;
         ir->src = (uint16_t)inst.get_var_src_eval_stack_idx();
         ir->dst = (uint16_t)inst.get_var_dst_eval_stack_idx();
         return codes + sizeof(ConvOvfI4UnR8);
@@ -3966,7 +3944,7 @@ uint8_t* OpCodes::write_instruction_to_data(uint8_t* codes, const GeneralInst& i
     {
         auto ir = (ConvOvfU4UnI8*)codes;
         ir->__prefix = 253;
-        ir->__code = 72;
+        ir->__code = 70;
         ir->src = (uint16_t)inst.get_var_src_eval_stack_idx();
         ir->dst = (uint16_t)inst.get_var_dst_eval_stack_idx();
         return codes + sizeof(ConvOvfU4UnI8);
@@ -3975,7 +3953,7 @@ uint8_t* OpCodes::write_instruction_to_data(uint8_t* codes, const GeneralInst& i
     {
         auto ir = (ConvOvfU4UnR4*)codes;
         ir->__prefix = 253;
-        ir->__code = 73;
+        ir->__code = 71;
         ir->src = (uint16_t)inst.get_var_src_eval_stack_idx();
         ir->dst = (uint16_t)inst.get_var_dst_eval_stack_idx();
         return codes + sizeof(ConvOvfU4UnR4);
@@ -3984,25 +3962,16 @@ uint8_t* OpCodes::write_instruction_to_data(uint8_t* codes, const GeneralInst& i
     {
         auto ir = (ConvOvfU4UnR8*)codes;
         ir->__prefix = 253;
-        ir->__code = 74;
+        ir->__code = 72;
         ir->src = (uint16_t)inst.get_var_src_eval_stack_idx();
         ir->dst = (uint16_t)inst.get_var_dst_eval_stack_idx();
         return codes + sizeof(ConvOvfU4UnR8);
-    }
-    case OpCodeEnum::ConvOvfI8UnI4:
-    {
-        auto ir = (ConvOvfI8UnI4*)codes;
-        ir->__prefix = 253;
-        ir->__code = 75;
-        ir->src = (uint16_t)inst.get_var_src_eval_stack_idx();
-        ir->dst = (uint16_t)inst.get_var_dst_eval_stack_idx();
-        return codes + sizeof(ConvOvfI8UnI4);
     }
     case OpCodeEnum::ConvOvfI8UnI8:
     {
         auto ir = (ConvOvfI8UnI8*)codes;
         ir->__prefix = 253;
-        ir->__code = 76;
+        ir->__code = 73;
         ir->src = (uint16_t)inst.get_var_src_eval_stack_idx();
         ir->dst = (uint16_t)inst.get_var_dst_eval_stack_idx();
         return codes + sizeof(ConvOvfI8UnI8);
@@ -4011,7 +3980,7 @@ uint8_t* OpCodes::write_instruction_to_data(uint8_t* codes, const GeneralInst& i
     {
         auto ir = (ConvOvfI8UnR4*)codes;
         ir->__prefix = 253;
-        ir->__code = 77;
+        ir->__code = 74;
         ir->src = (uint16_t)inst.get_var_src_eval_stack_idx();
         ir->dst = (uint16_t)inst.get_var_dst_eval_stack_idx();
         return codes + sizeof(ConvOvfI8UnR4);
@@ -4020,25 +3989,16 @@ uint8_t* OpCodes::write_instruction_to_data(uint8_t* codes, const GeneralInst& i
     {
         auto ir = (ConvOvfI8UnR8*)codes;
         ir->__prefix = 253;
-        ir->__code = 78;
+        ir->__code = 75;
         ir->src = (uint16_t)inst.get_var_src_eval_stack_idx();
         ir->dst = (uint16_t)inst.get_var_dst_eval_stack_idx();
         return codes + sizeof(ConvOvfI8UnR8);
-    }
-    case OpCodeEnum::ConvOvfU8UnI4:
-    {
-        auto ir = (ConvOvfU8UnI4*)codes;
-        ir->__prefix = 253;
-        ir->__code = 79;
-        ir->src = (uint16_t)inst.get_var_src_eval_stack_idx();
-        ir->dst = (uint16_t)inst.get_var_dst_eval_stack_idx();
-        return codes + sizeof(ConvOvfU8UnI4);
     }
     case OpCodeEnum::ConvOvfU8UnR4:
     {
         auto ir = (ConvOvfU8UnR4*)codes;
         ir->__prefix = 253;
-        ir->__code = 80;
+        ir->__code = 76;
         ir->src = (uint16_t)inst.get_var_src_eval_stack_idx();
         ir->dst = (uint16_t)inst.get_var_dst_eval_stack_idx();
         return codes + sizeof(ConvOvfU8UnR4);
@@ -4047,7 +4007,7 @@ uint8_t* OpCodes::write_instruction_to_data(uint8_t* codes, const GeneralInst& i
     {
         auto ir = (ConvOvfU8UnR8*)codes;
         ir->__prefix = 253;
-        ir->__code = 81;
+        ir->__code = 77;
         ir->src = (uint16_t)inst.get_var_src_eval_stack_idx();
         ir->dst = (uint16_t)inst.get_var_dst_eval_stack_idx();
         return codes + sizeof(ConvOvfU8UnR8);
@@ -4394,7 +4354,7 @@ uint8_t* OpCodes::write_instruction_to_data(uint8_t* codes, const GeneralInst& i
     {
         auto ir = (InitObjI2Unaligned*)codes;
         ir->__prefix = 253;
-        ir->__code = 82;
+        ir->__code = 78;
         ir->addr = (uint16_t)inst.get_var_src_eval_stack_idx();
         return codes + sizeof(InitObjI2Unaligned);
     }
@@ -4417,7 +4377,7 @@ uint8_t* OpCodes::write_instruction_to_data(uint8_t* codes, const GeneralInst& i
     {
         auto ir = (InitObjI4Unaligned*)codes;
         ir->__prefix = 253;
-        ir->__code = 83;
+        ir->__code = 79;
         ir->addr = (uint16_t)inst.get_var_src_eval_stack_idx();
         return codes + sizeof(InitObjI4Unaligned);
     }
@@ -4440,7 +4400,7 @@ uint8_t* OpCodes::write_instruction_to_data(uint8_t* codes, const GeneralInst& i
     {
         auto ir = (InitObjI8Unaligned*)codes;
         ir->__prefix = 253;
-        ir->__code = 84;
+        ir->__code = 80;
         ir->addr = (uint16_t)inst.get_var_src_eval_stack_idx();
         return codes + sizeof(InitObjI8Unaligned);
     }
@@ -5318,7 +5278,7 @@ uint8_t* OpCodes::write_instruction_to_data(uint8_t* codes, const GeneralInst& i
     {
         auto ir = (LdfldI1Large*)codes;
         ir->__prefix = 253;
-        ir->__code = 85;
+        ir->__code = 81;
         ir->obj = (uint16_t)inst.get_var_src_eval_stack_idx();
         ir->dst = (uint16_t)inst.get_var_dst_eval_stack_idx();
         ir->offset = (uint32_t)inst.get_field_offset();
@@ -5347,7 +5307,7 @@ uint8_t* OpCodes::write_instruction_to_data(uint8_t* codes, const GeneralInst& i
     {
         auto ir = (LdfldU1Large*)codes;
         ir->__prefix = 253;
-        ir->__code = 86;
+        ir->__code = 82;
         ir->obj = (uint16_t)inst.get_var_src_eval_stack_idx();
         ir->dst = (uint16_t)inst.get_var_dst_eval_stack_idx();
         ir->offset = (uint32_t)inst.get_field_offset();
@@ -5376,7 +5336,7 @@ uint8_t* OpCodes::write_instruction_to_data(uint8_t* codes, const GeneralInst& i
     {
         auto ir = (LdfldI2Large*)codes;
         ir->__prefix = 253;
-        ir->__code = 87;
+        ir->__code = 83;
         ir->obj = (uint16_t)inst.get_var_src_eval_stack_idx();
         ir->dst = (uint16_t)inst.get_var_dst_eval_stack_idx();
         ir->offset = (uint32_t)inst.get_field_offset();
@@ -5386,7 +5346,7 @@ uint8_t* OpCodes::write_instruction_to_data(uint8_t* codes, const GeneralInst& i
     {
         auto ir = (LdfldI2Unaligned*)codes;
         ir->__prefix = 253;
-        ir->__code = 88;
+        ir->__code = 84;
         ir->obj = (uint16_t)inst.get_var_src_eval_stack_idx();
         ir->dst = (uint16_t)inst.get_var_dst_eval_stack_idx();
         ir->offset = (uint16_t)inst.get_field_offset();
@@ -5415,7 +5375,7 @@ uint8_t* OpCodes::write_instruction_to_data(uint8_t* codes, const GeneralInst& i
     {
         auto ir = (LdfldU2Large*)codes;
         ir->__prefix = 253;
-        ir->__code = 89;
+        ir->__code = 85;
         ir->obj = (uint16_t)inst.get_var_src_eval_stack_idx();
         ir->dst = (uint16_t)inst.get_var_dst_eval_stack_idx();
         ir->offset = (uint32_t)inst.get_field_offset();
@@ -5425,7 +5385,7 @@ uint8_t* OpCodes::write_instruction_to_data(uint8_t* codes, const GeneralInst& i
     {
         auto ir = (LdfldU2Unaligned*)codes;
         ir->__prefix = 253;
-        ir->__code = 90;
+        ir->__code = 86;
         ir->obj = (uint16_t)inst.get_var_src_eval_stack_idx();
         ir->dst = (uint16_t)inst.get_var_dst_eval_stack_idx();
         ir->offset = (uint16_t)inst.get_field_offset();
@@ -5454,7 +5414,7 @@ uint8_t* OpCodes::write_instruction_to_data(uint8_t* codes, const GeneralInst& i
     {
         auto ir = (LdfldI4Large*)codes;
         ir->__prefix = 253;
-        ir->__code = 91;
+        ir->__code = 87;
         ir->obj = (uint16_t)inst.get_var_src_eval_stack_idx();
         ir->dst = (uint16_t)inst.get_var_dst_eval_stack_idx();
         ir->offset = (uint32_t)inst.get_field_offset();
@@ -5464,7 +5424,7 @@ uint8_t* OpCodes::write_instruction_to_data(uint8_t* codes, const GeneralInst& i
     {
         auto ir = (LdfldI4Unaligned*)codes;
         ir->__prefix = 253;
-        ir->__code = 92;
+        ir->__code = 88;
         ir->obj = (uint16_t)inst.get_var_src_eval_stack_idx();
         ir->dst = (uint16_t)inst.get_var_dst_eval_stack_idx();
         ir->offset = (uint16_t)inst.get_field_offset();
@@ -5493,7 +5453,7 @@ uint8_t* OpCodes::write_instruction_to_data(uint8_t* codes, const GeneralInst& i
     {
         auto ir = (LdfldI8Large*)codes;
         ir->__prefix = 253;
-        ir->__code = 93;
+        ir->__code = 89;
         ir->obj = (uint16_t)inst.get_var_src_eval_stack_idx();
         ir->dst = (uint16_t)inst.get_var_dst_eval_stack_idx();
         ir->offset = (uint32_t)inst.get_field_offset();
@@ -5503,7 +5463,7 @@ uint8_t* OpCodes::write_instruction_to_data(uint8_t* codes, const GeneralInst& i
     {
         auto ir = (LdfldI8Unaligned*)codes;
         ir->__prefix = 253;
-        ir->__code = 94;
+        ir->__code = 90;
         ir->obj = (uint16_t)inst.get_var_src_eval_stack_idx();
         ir->dst = (uint16_t)inst.get_var_dst_eval_stack_idx();
         ir->offset = (uint16_t)inst.get_field_offset();
@@ -5534,7 +5494,7 @@ uint8_t* OpCodes::write_instruction_to_data(uint8_t* codes, const GeneralInst& i
     {
         auto ir = (LdfldAnyLarge*)codes;
         ir->__prefix = 253;
-        ir->__code = 95;
+        ir->__code = 91;
         ir->obj = (uint16_t)inst.get_var_src_eval_stack_idx();
         ir->dst = (uint16_t)inst.get_var_dst_eval_stack_idx();
         ir->offset = (uint32_t)inst.get_field_offset();
@@ -5564,7 +5524,7 @@ uint8_t* OpCodes::write_instruction_to_data(uint8_t* codes, const GeneralInst& i
     {
         auto ir = (LdvfldI1Large*)codes;
         ir->__prefix = 253;
-        ir->__code = 96;
+        ir->__code = 92;
         ir->obj = (uint16_t)inst.get_var_src_eval_stack_idx();
         ir->dst = (uint16_t)inst.get_var_dst_eval_stack_idx();
         ir->offset = (uint32_t)inst.get_field_offset();
@@ -5593,7 +5553,7 @@ uint8_t* OpCodes::write_instruction_to_data(uint8_t* codes, const GeneralInst& i
     {
         auto ir = (LdvfldU1Large*)codes;
         ir->__prefix = 253;
-        ir->__code = 97;
+        ir->__code = 93;
         ir->obj = (uint16_t)inst.get_var_src_eval_stack_idx();
         ir->dst = (uint16_t)inst.get_var_dst_eval_stack_idx();
         ir->offset = (uint32_t)inst.get_field_offset();
@@ -5622,7 +5582,7 @@ uint8_t* OpCodes::write_instruction_to_data(uint8_t* codes, const GeneralInst& i
     {
         auto ir = (LdvfldI2Large*)codes;
         ir->__prefix = 253;
-        ir->__code = 98;
+        ir->__code = 94;
         ir->obj = (uint16_t)inst.get_var_src_eval_stack_idx();
         ir->dst = (uint16_t)inst.get_var_dst_eval_stack_idx();
         ir->offset = (uint32_t)inst.get_field_offset();
@@ -5632,7 +5592,7 @@ uint8_t* OpCodes::write_instruction_to_data(uint8_t* codes, const GeneralInst& i
     {
         auto ir = (LdvfldI2Unaligned*)codes;
         ir->__prefix = 253;
-        ir->__code = 99;
+        ir->__code = 95;
         ir->obj = (uint16_t)inst.get_var_src_eval_stack_idx();
         ir->dst = (uint16_t)inst.get_var_dst_eval_stack_idx();
         ir->offset = (uint16_t)inst.get_field_offset();
@@ -5661,7 +5621,7 @@ uint8_t* OpCodes::write_instruction_to_data(uint8_t* codes, const GeneralInst& i
     {
         auto ir = (LdvfldU2Large*)codes;
         ir->__prefix = 253;
-        ir->__code = 100;
+        ir->__code = 96;
         ir->obj = (uint16_t)inst.get_var_src_eval_stack_idx();
         ir->dst = (uint16_t)inst.get_var_dst_eval_stack_idx();
         ir->offset = (uint32_t)inst.get_field_offset();
@@ -5671,7 +5631,7 @@ uint8_t* OpCodes::write_instruction_to_data(uint8_t* codes, const GeneralInst& i
     {
         auto ir = (LdvfldU2Unaligned*)codes;
         ir->__prefix = 253;
-        ir->__code = 101;
+        ir->__code = 97;
         ir->obj = (uint16_t)inst.get_var_src_eval_stack_idx();
         ir->dst = (uint16_t)inst.get_var_dst_eval_stack_idx();
         ir->offset = (uint16_t)inst.get_field_offset();
@@ -5700,7 +5660,7 @@ uint8_t* OpCodes::write_instruction_to_data(uint8_t* codes, const GeneralInst& i
     {
         auto ir = (LdvfldI4Large*)codes;
         ir->__prefix = 253;
-        ir->__code = 102;
+        ir->__code = 98;
         ir->obj = (uint16_t)inst.get_var_src_eval_stack_idx();
         ir->dst = (uint16_t)inst.get_var_dst_eval_stack_idx();
         ir->offset = (uint32_t)inst.get_field_offset();
@@ -5710,7 +5670,7 @@ uint8_t* OpCodes::write_instruction_to_data(uint8_t* codes, const GeneralInst& i
     {
         auto ir = (LdvfldI4Unaligned*)codes;
         ir->__prefix = 253;
-        ir->__code = 103;
+        ir->__code = 99;
         ir->obj = (uint16_t)inst.get_var_src_eval_stack_idx();
         ir->dst = (uint16_t)inst.get_var_dst_eval_stack_idx();
         ir->offset = (uint16_t)inst.get_field_offset();
@@ -5739,7 +5699,7 @@ uint8_t* OpCodes::write_instruction_to_data(uint8_t* codes, const GeneralInst& i
     {
         auto ir = (LdvfldI8Large*)codes;
         ir->__prefix = 253;
-        ir->__code = 104;
+        ir->__code = 100;
         ir->obj = (uint16_t)inst.get_var_src_eval_stack_idx();
         ir->dst = (uint16_t)inst.get_var_dst_eval_stack_idx();
         ir->offset = (uint32_t)inst.get_field_offset();
@@ -5749,7 +5709,7 @@ uint8_t* OpCodes::write_instruction_to_data(uint8_t* codes, const GeneralInst& i
     {
         auto ir = (LdvfldI8Unaligned*)codes;
         ir->__prefix = 253;
-        ir->__code = 105;
+        ir->__code = 101;
         ir->obj = (uint16_t)inst.get_var_src_eval_stack_idx();
         ir->dst = (uint16_t)inst.get_var_dst_eval_stack_idx();
         ir->offset = (uint16_t)inst.get_field_offset();
@@ -5780,7 +5740,7 @@ uint8_t* OpCodes::write_instruction_to_data(uint8_t* codes, const GeneralInst& i
     {
         auto ir = (LdvfldAnyLarge*)codes;
         ir->__prefix = 253;
-        ir->__code = 106;
+        ir->__code = 102;
         ir->obj = (uint16_t)inst.get_var_src_eval_stack_idx();
         ir->dst = (uint16_t)inst.get_var_dst_eval_stack_idx();
         ir->offset = (uint32_t)inst.get_field_offset();
@@ -5810,7 +5770,7 @@ uint8_t* OpCodes::write_instruction_to_data(uint8_t* codes, const GeneralInst& i
     {
         auto ir = (LdfldaLarge*)codes;
         ir->__prefix = 253;
-        ir->__code = 107;
+        ir->__code = 103;
         ir->obj = (uint16_t)inst.get_var_src_eval_stack_idx();
         ir->dst = (uint16_t)inst.get_var_dst_eval_stack_idx();
         ir->offset = (uint32_t)inst.get_field_offset();
@@ -5839,7 +5799,7 @@ uint8_t* OpCodes::write_instruction_to_data(uint8_t* codes, const GeneralInst& i
     {
         auto ir = (StfldI1Large*)codes;
         ir->__prefix = 253;
-        ir->__code = 108;
+        ir->__code = 104;
         ir->obj = (uint16_t)inst.get_var_arg1_eval_stack_idx();
         ir->value = (uint16_t)inst.get_var_arg2_eval_stack_idx();
         ir->offset = (uint32_t)inst.get_field_offset();
@@ -5868,7 +5828,7 @@ uint8_t* OpCodes::write_instruction_to_data(uint8_t* codes, const GeneralInst& i
     {
         auto ir = (StfldI2Large*)codes;
         ir->__prefix = 253;
-        ir->__code = 109;
+        ir->__code = 105;
         ir->obj = (uint16_t)inst.get_var_arg1_eval_stack_idx();
         ir->value = (uint16_t)inst.get_var_arg2_eval_stack_idx();
         ir->offset = (uint32_t)inst.get_field_offset();
@@ -5878,7 +5838,7 @@ uint8_t* OpCodes::write_instruction_to_data(uint8_t* codes, const GeneralInst& i
     {
         auto ir = (StfldI2Unaligned*)codes;
         ir->__prefix = 253;
-        ir->__code = 110;
+        ir->__code = 106;
         ir->obj = (uint16_t)inst.get_var_arg1_eval_stack_idx();
         ir->value = (uint16_t)inst.get_var_arg2_eval_stack_idx();
         ir->offset = (uint16_t)inst.get_field_offset();
@@ -5907,7 +5867,7 @@ uint8_t* OpCodes::write_instruction_to_data(uint8_t* codes, const GeneralInst& i
     {
         auto ir = (StfldI4Large*)codes;
         ir->__prefix = 253;
-        ir->__code = 111;
+        ir->__code = 107;
         ir->obj = (uint16_t)inst.get_var_arg1_eval_stack_idx();
         ir->value = (uint16_t)inst.get_var_arg2_eval_stack_idx();
         ir->offset = (uint32_t)inst.get_field_offset();
@@ -5917,7 +5877,7 @@ uint8_t* OpCodes::write_instruction_to_data(uint8_t* codes, const GeneralInst& i
     {
         auto ir = (StfldI4Unaligned*)codes;
         ir->__prefix = 253;
-        ir->__code = 112;
+        ir->__code = 108;
         ir->obj = (uint16_t)inst.get_var_arg1_eval_stack_idx();
         ir->value = (uint16_t)inst.get_var_arg2_eval_stack_idx();
         ir->offset = (uint16_t)inst.get_field_offset();
@@ -5946,7 +5906,7 @@ uint8_t* OpCodes::write_instruction_to_data(uint8_t* codes, const GeneralInst& i
     {
         auto ir = (StfldI8Large*)codes;
         ir->__prefix = 253;
-        ir->__code = 113;
+        ir->__code = 109;
         ir->obj = (uint16_t)inst.get_var_arg1_eval_stack_idx();
         ir->value = (uint16_t)inst.get_var_arg2_eval_stack_idx();
         ir->offset = (uint32_t)inst.get_field_offset();
@@ -5956,7 +5916,7 @@ uint8_t* OpCodes::write_instruction_to_data(uint8_t* codes, const GeneralInst& i
     {
         auto ir = (StfldI8Unaligned*)codes;
         ir->__prefix = 253;
-        ir->__code = 114;
+        ir->__code = 110;
         ir->obj = (uint16_t)inst.get_var_arg1_eval_stack_idx();
         ir->value = (uint16_t)inst.get_var_arg2_eval_stack_idx();
         ir->offset = (uint16_t)inst.get_field_offset();
@@ -5987,7 +5947,7 @@ uint8_t* OpCodes::write_instruction_to_data(uint8_t* codes, const GeneralInst& i
     {
         auto ir = (StfldAnyLarge*)codes;
         ir->__prefix = 253;
-        ir->__code = 115;
+        ir->__code = 111;
         ir->obj = (uint16_t)inst.get_var_arg1_eval_stack_idx();
         ir->value = (uint16_t)inst.get_var_arg2_eval_stack_idx();
         ir->offset = (uint32_t)inst.get_field_offset();
@@ -6296,11 +6256,11 @@ uint8_t* OpCodes::write_instruction_to_data(uint8_t* codes, const GeneralInst& i
         ir->size = (uint8_t)inst.get_size();
         return codes + sizeof(RetAnyShort);
     }
-    case OpCodeEnum::RetNop:
+    case OpCodeEnum::RetNopShort:
     {
-        auto ir = (RetNop*)codes;
+        auto ir = (RetNopShort*)codes;
         ir->__code = 214;
-        return codes + sizeof(RetNop);
+        return codes + sizeof(RetNopShort);
     }
     case OpCodeEnum::CallInterp:
     {
