@@ -1,0 +1,8 @@
+blank_issues_enabled: false
+contact_links:
+  - name: Discord Community
+    url: https://discord.gg/esAYcM6RDQ
+    about: Join our Discord server for discussions and quick questions
+  - name: Documentation
+    url: https://github.com/focus-creative-games/leanclr/tree/main/docs
+    about: Check the documentation before opening an issue

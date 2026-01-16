@@ -1,0 +1,109 @@
+name: Bug Report
+description: Report a bug or unexpected behavior in LeanCLR
+title: "[Bug]: "
+labels: ["bug"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thank you for taking the time to report a bug! Please fill out the form below to help us investigate and fix the issue.
+
+  - type: dropdown
+    id: edition
+    attributes:
+      label: LeanCLR Edition
+      description: Which edition of LeanCLR are you using?
+      options:
+        - Universal (Single-threaded)
+        - Standard (Multi-threaded)
+    validations:
+      required: true
+
+  - type: dropdown
+    id: platform
+    attributes:
+      label: Platform
+      description: Which platform are you running on?
+      options:
+        - Windows x64
+        - Windows x86
+        - WebAssembly (Browser)
+        - Linux
+        - macOS
+        - iOS
+        - Android
+        - Other
+    validations:
+      required: true
+
+  - type: input
+    id: version
+    attributes:
+      label: LeanCLR Version
+      description: Version or commit hash of LeanCLR
+      placeholder: "e.g., v1.0.0 or commit abc1234"
+    validations:
+      required: true
+
+  - type: textarea
+    id: description
+    attributes:
+      label: Bug Description
+      description: A clear and concise description of the bug
+      placeholder: Describe what happened and what you expected to happen
+    validations:
+      required: true
+
+  - type: textarea
+    id: reproduction
+    attributes:
+      label: Steps to Reproduce
+      description: |
+        Provide a minimal test case to reproduce the issue.
+        You can use the LeanCLR test framework format (see [Test Framework](https://github.com/focus-creative-games/leanclr/blob/main/src/tests/README.md))
+      placeholder: |
+        ```csharp
+        class TC_BugReport : GeneralTestCaseBase
+        {
+            [UnitTest]
+            public void ReproduceIssue()
+            {
+                // Your reproduction code here
+                Assert.Equal(expected, actual);
+            }
+        }
+        ```
+    validations:
+      required: true
+
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected Behavior
+      description: What did you expect to happen?
+    validations:
+      required: true
+
+  - type: textarea
+    id: actual
+    attributes:
+      label: Actual Behavior
+      description: What actually happened? Include any error messages or stack traces.
+    validations:
+      required: true
+
+  - type: textarea
+    id: environment
+    attributes:
+      label: Environment Details
+      description: Any additional environment information
+      placeholder: |
+        - Compiler: MSVC 2022 / Clang / GCC / Emscripten
+        - .NET Target: .NET Framework 4.x / .NET Standard 2.x
+        - Browser (if WebAssembly): Chrome 120 / Firefox / Safari
+
+  - type: textarea
+    id: additional
+    attributes:
+      label: Additional Context
+      description: Any other context, screenshots, or information about the problem
