@@ -48,7 +48,7 @@ RtResult<const RtInterpMethodInfo*> Interpreter::init_interpreter_method(const m
     RET_OK(interp_method);
 }
 
-#if USE_COMPUTED_GOTO_DISPATCHER
+#if LEANCLR_USE_COMPUTED_GOTO_DISPATCHER
 #define LEANCLR_SWITCH0() goto* in_lables0[*ip]
 #define LEANCLR_CONTINUE0() goto* in_lables0[*ip]
 #define LEANCLR_CASE0(code) LABLE0_##code:
@@ -681,7 +681,7 @@ RtResult<const RtStackObject*> Interpreter::execute(const metadata::RtMethodInfo
     DECLARING_AND_UNWRAP_OR_RET_ERR_ON_FAIL3(InterpFrame*, frame, ms.enter_frame_from_native(method, params));
 
 #pragma region goto_lable
-#if USE_COMPUTED_GOTO_DISPATCHER
+#if LEANCLR_USE_COMPUTED_GOTO_DISPATCHER
     static void* const in_labels0[] = {
         &&LABEL0_InitLocals1Short,
     };
@@ -811,7 +811,7 @@ method_start:
             LEANCLR_CASE_BEGIN0(LdcI8I8Short)
             {
                 RtStackObject* dst = eval_stack_base + ir->dst;
-#if SUPPORT_UNALIGNED_ACCESS
+#if LEANCLR_SUPPORT_UNALIGNED_ACCESS
                 dst->i64 = *(int64_t*)&ir->value_low;
 #else
                 dst->i64 = (static_cast<int64_t>(ir->value_low)) | ((static_cast<int64_t>(ir->value_high)) << 32);
@@ -957,7 +957,7 @@ method_start:
                     LEANCLR_CASE_BEGIN1(LdcI8I8)
                     {
                         RtStackObject* dst = eval_stack_base + ir->dst;
-#if SUPPORT_UNALIGNED_ACCESS
+#if LEANCLR_SUPPORT_UNALIGNED_ACCESS
                         dst->i64 = *(int64_t*)&ir->value_low;
 #else
                         dst->i64 = (static_cast<int64_t>(ir->value_low)) | ((static_cast<int64_t>(ir->value_high)) << 32);
@@ -3628,7 +3628,7 @@ method_start:
                         goto unwind_exception_handler;
                     }
                     LEANCLR_CASE_END_LITE1()
-#if !USE_COMPUTED_GOTO_DISPATCHER
+#if !LEANCLR_USE_COMPUTED_GOTO_DISPATCHER
                 default:
                 {
                     assert(false && "Invalid opcode");
@@ -3988,7 +3988,7 @@ method_start:
                         set_stack_value_at<int32_t>(eval_stack_base, ir->dst, hash);
                     }
                     LEANCLR_CASE_END2()
-#if !USE_COMPUTED_GOTO_DISPATCHER
+#if !LEANCLR_USE_COMPUTED_GOTO_DISPATCHER
                 default:
                 {
                     assert(false && "Invalid opcode");
@@ -4585,7 +4585,7 @@ method_start:
                     }
 
                     LEANCLR_CASE_END3()
-#if !USE_COMPUTED_GOTO_DISPATCHER
+#if !LEANCLR_USE_COMPUTED_GOTO_DISPATCHER
                 default:
                 {
                     assert(false && "Invalid opcode");
@@ -4618,7 +4618,7 @@ method_start:
                         RAISE_RUNTIME_ERROR(RtErr::ExecutionEngine);
                     }
                     LEANCLR_CASE_END4()
-#if !USE_COMPUTED_GOTO_DISPATCHER
+#if !LEANCLR_USE_COMPUTED_GOTO_DISPATCHER
                 default:
                 {
                     assert(false && "Invalid opcode");
@@ -4635,7 +4635,7 @@ method_start:
                 RAISE_RUNTIME_ERROR(RtErr::ExecutionEngine);
             }
             LEANCLR_CASE_END_LITE0()
-#if !USE_COMPUTED_GOTO_DISPATCHER
+#if !LEANCLR_USE_COMPUTED_GOTO_DISPATCHER
         default:
         {
             assert(false && "Invalid opcode");

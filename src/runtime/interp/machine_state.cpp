@@ -61,7 +61,7 @@ void MachineState::free_frame_stack(uint32_t old_eval_stack_top)
 
 RtResult<InterpFrame*> MachineState::enter_frame_from_native(const metadata::RtMethodInfo* method, const RtStackObject* args)
 {
-#if ENABLE_FRAME_TRACE
+#if LEANCLR_ENABLE_FRAME_TRACE
     std::printf("enter_frame_from_native: token:%u method:%s.%s::%s\n", method->token, method->parent->namespaze, method->parent->name, method->name);
 #endif
     const RtInterpMethodInfo* imi = method->interp_data;
@@ -90,7 +90,7 @@ RtResult<InterpFrame*> MachineState::enter_frame_from_native(const metadata::RtM
 
 RtResult<InterpFrame*> MachineState::enter_frame_from_interp(const metadata::RtMethodInfo* method, RtStackObject* frame_base)
 {
-#if ENABLE_FRAME_TRACE
+#if LEANCLR_ENABLE_FRAME_TRACE
     std::printf("enter_frame_from_interp: token:0x%0x method:%s.%s::%s\n", method->token, method->parent->namespaze, method->parent->name, method->name);
 #endif
     const RtInterpMethodInfo* imi = method->interp_data;
@@ -122,7 +122,7 @@ RtResult<InterpFrame*> MachineState::enter_frame_from_interp(const metadata::RtM
 
 InterpFrame* MachineState::leave_frame(const MachineStateSavePoint& sp, InterpFrame* frame)
 {
-#if ENABLE_FRAME_TRACE
+#if LEANCLR_ENABLE_FRAME_TRACE
     std::printf("exit_frame: token:0x%0x method:%s.%s::%s\n", frame->method->token, frame->method->parent->namespaze, frame->method->parent->name,
                 frame->method->name);
 #endif
@@ -139,7 +139,7 @@ InterpFrame* MachineState::leave_frame(const MachineStateSavePoint& sp, InterpFr
 
 uint32_t MachineState::enter_frame_from_icall_or_intrinsic(const metadata::RtMethodInfo* method)
 {
-#if ENABLE_FRAME_TRACE
+#if LEANCLR_ENABLE_FRAME_TRACE
     std::printf("enter_frame_from_icall_or_intrinsic: token:0x%0x method:%s.%s::%s\n", method->token, method->parent->namespaze, method->parent->name,
                 method->name);
 #endif
@@ -160,7 +160,7 @@ uint32_t MachineState::enter_frame_from_icall_or_intrinsic(const metadata::RtMet
 
 void MachineState::leave_frame_from_icall_or_intrinsic(uint32_t old_frame_top)
 {
-#if ENABLE_FRAME_TRACE
+#if LEANCLR_ENABLE_FRAME_TRACE
     if (old_frame_top < _frame_stack_top)
     {
         InterpFrame* frame = _frame_stack_base + old_frame_top;

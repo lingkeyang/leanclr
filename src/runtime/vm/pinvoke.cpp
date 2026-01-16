@@ -77,7 +77,7 @@ static RtResultVoid nop_invoker(metadata::RtManagedMethodPointer methodPtr, cons
 }
 
 static PInvokeEntry s_pinvoke_entries[] = {
-    // #if ENABLE_TEST_PINVOKES
+    // #if LEANCLR_ENABLE_TEST_PINVOKES
     {"Interop/Sys::LChflagsCanSetHiddenFlag", (PInvokeFunction)&nop_function, nop_invoker},
     // #endif
 };

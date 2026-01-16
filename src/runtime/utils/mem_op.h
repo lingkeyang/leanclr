@@ -20,7 +20,7 @@ class MemOp
     template <typename T>
     static void copy_obj_nonoverlapping(T* dst, const T* src)
     {
-#if SUPPORT_UNALIGNED_ACCESS
+#if LEANCLR_SUPPORT_UNALIGNED_ACCESS
         *dst = *src;
 #else
         std::memcpy(dst, src, sizeof(T));
@@ -30,7 +30,7 @@ class MemOp
     template <typename T>
     static void copy_obj_mayoverlapping(T* dst, const T* src)
     {
-#if SUPPORT_UNALIGNED_ACCESS
+#if LEANCLR_SUPPORT_UNALIGNED_ACCESS
         *dst = *src;
 #else
         std::memmove(dst, src, sizeof(T));
@@ -40,7 +40,7 @@ class MemOp
     template <typename T>
     static void copy_obj_array_nonoverlapping(T* dst, const T* src, size_t count)
     {
-#if SUPPORT_UNALIGNED_ACCESS
+#if LEANCLR_SUPPORT_UNALIGNED_ACCESS
         for (size_t i = 0; i < count; i++)
         {
             dst[i] = src[i];
@@ -53,7 +53,7 @@ class MemOp
     template <typename T>
     static void copy_obj_array_mayoverlapping(T* dst, const T* src, size_t count)
     {
-#if SUPPORT_UNALIGNED_ACCESS
+#if LEANCLR_SUPPORT_UNALIGNED_ACCESS
         for (size_t i = 0; i < count; i++)
         {
             dst[i] = src[i];
@@ -65,7 +65,7 @@ class MemOp
 
     static int16_t read_i16_may_unaligned(const void* ptr)
     {
-#if SUPPORT_UNALIGNED_ACCESS
+#if LEANCLR_SUPPORT_UNALIGNED_ACCESS
         return *reinterpret_cast<const int16_t*>(ptr);
 #else
         int16_t val;
@@ -81,7 +81,7 @@ class MemOp
 
     static int32_t read_i32_may_unaligned(const void* ptr)
     {
-#if SUPPORT_UNALIGNED_ACCESS
+#if LEANCLR_SUPPORT_UNALIGNED_ACCESS
         return *reinterpret_cast<const int32_t*>(ptr);
 #else
         int32_t val;
@@ -97,7 +97,7 @@ class MemOp
 
     static int64_t read_i64_may_unaligned(const void* ptr)
     {
-#if SUPPORT_UNALIGNED_ACCESS
+#if LEANCLR_SUPPORT_UNALIGNED_ACCESS
         return *reinterpret_cast<const int64_t*>(ptr);
 #else
         int64_t val;
@@ -113,7 +113,7 @@ class MemOp
 
     static float read_f32_may_unaligned(const void* ptr)
     {
-#if SUPPORT_UNALIGNED_ACCESS
+#if LEANCLR_SUPPORT_UNALIGNED_ACCESS
         return *reinterpret_cast<const float*>(ptr);
 #else
         float val;
@@ -124,7 +124,7 @@ class MemOp
 
     static double read_f64_may_unaligned(const void* ptr)
     {
-#if SUPPORT_UNALIGNED_ACCESS
+#if LEANCLR_SUPPORT_UNALIGNED_ACCESS
         return *reinterpret_cast<const double*>(ptr);
 #else
         double val;
@@ -135,7 +135,7 @@ class MemOp
 
     static void write_i16_may_unaligned(void* ptr, int16_t value)
     {
-#if SUPPORT_UNALIGNED_ACCESS
+#if LEANCLR_SUPPORT_UNALIGNED_ACCESS
         *reinterpret_cast<int16_t*>(ptr) = value;
 #else
         std::memcpy(ptr, &value, sizeof(int16_t));
@@ -149,7 +149,7 @@ class MemOp
 
     static void write_i32_may_unaligned(void* ptr, int32_t value)
     {
-#if SUPPORT_UNALIGNED_ACCESS
+#if LEANCLR_SUPPORT_UNALIGNED_ACCESS
         *reinterpret_cast<int32_t*>(ptr) = value;
 #else
         std::memcpy(ptr, &value, sizeof(int32_t));
@@ -163,7 +163,7 @@ class MemOp
 
     static void write_i64_may_unaligned(void* ptr, int64_t value)
     {
-#if SUPPORT_UNALIGNED_ACCESS
+#if LEANCLR_SUPPORT_UNALIGNED_ACCESS
         *reinterpret_cast<int64_t*>(ptr) = value;
 #else
         std::memcpy(ptr, &value, sizeof(int64_t));
