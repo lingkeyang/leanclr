@@ -2,9 +2,6 @@
 
 #include <stdint.h>
 
-typedef uint8_t byte;
-typedef int8_t sbyte;
-
 #define LEANCLR_SUPPORT_UNALIGNED_ACCESS 1
 
 #if UINTPTR_MAX == 0xFFFFFFFF

@@ -6,6 +6,9 @@
 #include "core/rt_err.h"
 #include "core/rt_result.h"
 
+typedef uint8_t byte;
+typedef int8_t sbyte;
+
 namespace leanclr
 {
 
