@@ -44,8 +44,12 @@ namespace test
         public static void Main()
         {
             Debugger.Log(0, "info", "Hello, World!");
-            Debugger.Log(1, "涓枃", "浣犲ソ锛屼笘鐣岋紒");
-            Throw1();
+            Debugger.Log(1, "中文", "你好，世界！");
+        }
+
+        public static void CallCustomPInvoke()
+        {
+            Debugger.Log(0, "", $"3+4={CustomPInvoke.Add(3, 4)}");
         }
 
         static void Throw1()
