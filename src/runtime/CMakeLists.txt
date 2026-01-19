@@ -13,10 +13,10 @@ set(RUNTIME_DIRS
     platform
     utils
     vm
+    public_impl
 )
 
 set(RUNTIME_SOURCES)
-list(APPEND RUNTIME_SOURCES "${CMAKE_CURRENT_LIST_DIR}/leanclr.cpp")
 foreach(dir ${RUNTIME_DIRS})
     file(GLOB dir_sources "${CMAKE_CURRENT_LIST_DIR}/${dir}/*.cpp")
     list(APPEND RUNTIME_SOURCES ${dir_sources})
