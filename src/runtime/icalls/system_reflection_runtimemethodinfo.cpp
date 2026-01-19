@@ -1,14 +1,14 @@
 #include "system_reflection_runtimemethodinfo.h"
 
 #include "icall_base.h"
-#include "../vm/class.h"
-#include "../vm/method.h"
-#include "../vm/reflection.h"
-#include "../vm/rt_array.h"
-#include "../vm/generic_method.h"
-#include "../vm/rt_string.h"
-#include "../metadata/metadata_cache.h"
-#include "../metadata/module_def.h"
+#include "vm/class.h"
+#include "vm/method.h"
+#include "vm/reflection.h"
+#include "vm/rt_array.h"
+#include "vm/generic_method.h"
+#include "vm/rt_string.h"
+#include "metadata/metadata_cache.h"
+#include "metadata/module_def.h"
 
 namespace leanclr::icalls
 {

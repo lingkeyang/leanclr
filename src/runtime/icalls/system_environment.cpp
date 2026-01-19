@@ -1,13 +1,13 @@
 #include "system_environment.h"
 #include "icall_base.h"
 
-#include "../vm/runtime.h"
-#include "../vm/rt_string.h"
-#include "../vm/rt_array.h"
-#include "../vm/class.h"
-#include "../vm/environment.h"
+#include "vm/runtime.h"
+#include "vm/rt_string.h"
+#include "vm/rt_array.h"
+#include "vm/class.h"
+#include "vm/environment.h"
 
-#include "../platform/rt_time.h"
+#include "platform/rt_time.h"
 
 namespace leanclr::icalls
 {

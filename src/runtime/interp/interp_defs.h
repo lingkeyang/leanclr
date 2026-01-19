@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../vm/rt_managed_types.h"
+#include "vm/rt_managed_types.h"
 
 namespace leanclr::interp
 {

@@ -1,8 +1,8 @@
 #include <cstdio>
 #include "machine_state.h"
 
-#include "../alloc/general_allocation.h"
-#include "../vm/settings.h"
+#include "alloc/general_allocation.h"
+#include "vm/settings.h"
 #include "interpreter.h"
 
 namespace leanclr::interp

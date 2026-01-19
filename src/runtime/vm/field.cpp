@@ -8,11 +8,11 @@
 #include "object.h"
 #include "type.h"
 
-#include "../utils/string_util.h"
-#include "../metadata/metadata_cache.h"
-#include "../metadata/module_def.h"
-#include "../metadata/generic_metadata.h"
-#include "../metadata/metadata_const.h"
+#include "utils/string_util.h"
+#include "metadata/metadata_cache.h"
+#include "metadata/module_def.h"
+#include "metadata/generic_metadata.h"
+#include "metadata/metadata_const.h"
 
 namespace leanclr::vm
 {

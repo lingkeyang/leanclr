@@ -5,8 +5,8 @@
 #include <optional>
 #include <utility>
 
-#include "../utils/mem_op.h"
-#include "../alloc/mem_pool.h"
+#include "utils/mem_op.h"
+#include "alloc/mem_pool.h"
 #include "cli_metadata.h"
 
 namespace leanclr::utils

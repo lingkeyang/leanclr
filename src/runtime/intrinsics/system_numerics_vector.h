@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../vm/intrinsics.h"
+#include "vm/intrinsics.h"
 
 namespace leanclr::intrinsics
 {

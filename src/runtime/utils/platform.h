@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../build_config.h"
+#include "build_config.h"
 
 namespace leanclr::utils
 {

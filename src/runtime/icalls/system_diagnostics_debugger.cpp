@@ -1,8 +1,8 @@
 #include "system_diagnostics_debugger.h"
 
 #include "icall_base.h"
-#include "../vm/debugger.h"
-#include "../vm/rt_string.h"
+#include "vm/debugger.h"
+#include "vm/rt_string.h"
 
 namespace leanclr::icalls
 {

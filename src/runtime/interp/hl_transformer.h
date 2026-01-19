@@ -3,8 +3,8 @@
 #include "transform_defs.h"
 #include "il_opcodes.h"
 #include "hl_opcodes.h"
-#include "../utils/not_free_list.h"
-#include "../utils/hashmap.h"
+#include "utils/not_free_list.h"
+#include "utils/hashmap.h"
 
 namespace leanclr::interp::hl
 {

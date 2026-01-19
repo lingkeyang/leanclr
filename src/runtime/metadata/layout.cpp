@@ -1,8 +1,8 @@
 #include "layout.h"
-#include "../vm/class.h"
-#include "../utils/mem_op.h"
-#include "../vm/generic_class.h"
-#include "../metadata/module_def.h"
+#include "vm/class.h"
+#include "utils/mem_op.h"
+#include "vm/generic_class.h"
+#include "metadata/module_def.h"
 
 namespace leanclr::metadata
 {

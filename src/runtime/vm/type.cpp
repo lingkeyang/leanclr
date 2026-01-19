@@ -7,10 +7,10 @@
 #include "generic_class.h"
 #include "rt_string.h"
 #include "method.h"
-#include "../metadata/rt_metadata.h"
-#include "../metadata/module_def.h"
-#include "../metadata/metadata_cache.h"
-#include "../utils/string_builder.h"
+#include "metadata/rt_metadata.h"
+#include "metadata/module_def.h"
+#include "metadata/metadata_cache.h"
+#include "utils/string_builder.h"
 
 namespace leanclr::vm
 {

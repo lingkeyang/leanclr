@@ -1,8 +1,8 @@
 #pragma once
 
-#include "../metadata/rt_metadata.h"
-#include "../utils/rt_vector.h"
-#include "../vm/internal_calls.h"
+#include "metadata/rt_metadata.h"
+#include "utils/rt_vector.h"
+#include "vm/internal_calls.h"
 
 namespace leanclr::icalls
 {

@@ -1,6 +1,6 @@
 #include "system_security_cryptography_rngcryptoserviceprovider.h"
 
-#include "../misc/rng_crypto_service_provider.h"
+#include "misc/rng_crypto_service_provider.h"
 
 namespace leanclr::icalls
 {

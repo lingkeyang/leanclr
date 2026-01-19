@@ -1,9 +1,9 @@
 #pragma once
 
 #include "rt_base.h"
-#include "../metadata/rt_metadata.h"
-#include "../utils/rt_vector.h"
-#include "../utils/binary_reader.h"
+#include "metadata/rt_metadata.h"
+#include "utils/rt_vector.h"
+#include "utils/binary_reader.h"
 #include "rt_managed_types.h"
 
 namespace leanclr::vm

@@ -1,15 +1,15 @@
 #pragma once
 
-#include "../rt_base.h"
+#include "rt_base.h"
 #include "cli_image.h"
 #include "rt_metadata.h"
-#include "../vm/rt_managed_types.h"
-#include "../alloc/mem_pool.h"
-#include "../utils/rt_vector.h"
-#include "../utils/binary_reader.h"
-#include "../utils/hashmap.h"
-#include "../utils/string_util.h"
-#include "../utils/rt_span.h"
+#include "vm/rt_managed_types.h"
+#include "alloc/mem_pool.h"
+#include "utils/rt_vector.h"
+#include "utils/binary_reader.h"
+#include "utils/hashmap.h"
+#include "utils/string_util.h"
+#include "utils/rt_span.h"
 
 namespace leanclr::metadata
 {

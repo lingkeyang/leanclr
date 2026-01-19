@@ -1,12 +1,12 @@
 #include "rt_exception.h"
-#include "../gc/garbage_collector.h"
+#include "gc/garbage_collector.h"
 #include "assembly.h"
 #include "class.h"
 #include "object.h"
 #include "method.h"
 #include "rt_string.h"
 #include "stacktrace.h"
-#include "../interp/machine_state.h"
+#include "interp/machine_state.h"
 #include "settings.h"
 
 namespace leanclr::vm

@@ -1,6 +1,6 @@
 #include "system_threading_timer.h"
 
-#include "../platform/rt_time.h"
+#include "platform/rt_time.h"
 
 namespace leanclr::icalls
 {

@@ -1,8 +1,8 @@
 #pragma once
 
-#include "../metadata/rt_metadata.h"
-#include "../utils/rt_vector.h"
-#include "../vm/intrinsics.h"
+#include "metadata/rt_metadata.h"
+#include "utils/rt_vector.h"
+#include "vm/intrinsics.h"
 
 namespace leanclr::intrinsics
 {

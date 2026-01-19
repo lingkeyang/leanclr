@@ -1,5 +1,5 @@
 #include "settings.h"
-#include "../utils/string_builder.h"
+#include "utils/string_builder.h"
 
 namespace leanclr::vm
 {

@@ -4,7 +4,7 @@
 #include <cstdint>
 
 #include "interp_defs.h"
-#include "../utils/rt_span.h"
+#include "utils/rt_span.h"
 
 namespace leanclr::interp
 {

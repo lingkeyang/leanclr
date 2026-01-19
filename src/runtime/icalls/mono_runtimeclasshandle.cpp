@@ -1,7 +1,7 @@
 #include "mono_runtimeclasshandle.h"
 
 #include "icall_base.h"
-#include "../vm/class.h"
+#include "vm/class.h"
 
 namespace leanclr::icalls
 {

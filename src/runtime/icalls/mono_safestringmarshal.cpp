@@ -1,9 +1,9 @@
 #include "mono_safestringmarshal.h"
 #include "icall_base.h"
 #include "vm/rt_string.h"
-#include "../alloc/general_allocation.h"
-#include "../utils/string_util.h"
-#include "../utils/string_builder.h"
+#include "alloc/general_allocation.h"
+#include "utils/string_util.h"
+#include "utils/string_builder.h"
 
 namespace leanclr::icalls
 {

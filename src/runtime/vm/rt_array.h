@@ -1,8 +1,8 @@
 #pragma once
 
 #include "rt_managed_types.h"
-#include "../metadata/rt_metadata.h"
-#include "../interp/interp_defs.h"
+#include "metadata/rt_metadata.h"
+#include "interp/interp_defs.h"
 
 namespace leanclr::vm
 {

@@ -4,7 +4,7 @@
 #include "object.h"
 #include "rt_array.h"
 #include "class.h"
-#include "../interp/eval_stack_op.h"
+#include "interp/eval_stack_op.h"
 
 namespace leanclr::vm
 {

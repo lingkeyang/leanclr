@@ -16,14 +16,14 @@
 #include "type.h"
 #include "rt_string.h"
 #include "rt_exception.h"
-#include "../alloc/general_allocation.h"
-#include "../metadata/metadata_cache.h"
-#include "../metadata/metadata_compare.h"
-#include "../metadata/metadata_hash.h"
-#include "../metadata/module_def.h"
-#include "../utils/hash_util.h"
-#include "../utils/hashmap.h"
-#include "../utils/string_builder.h"
+#include "alloc/general_allocation.h"
+#include "metadata/metadata_cache.h"
+#include "metadata/metadata_compare.h"
+#include "metadata/metadata_hash.h"
+#include "metadata/module_def.h"
+#include "utils/hash_util.h"
+#include "utils/hashmap.h"
+#include "utils/string_builder.h"
 
 namespace leanclr::vm
 {

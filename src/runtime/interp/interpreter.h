@@ -1,7 +1,7 @@
 #pragma once
 
 #include "interp_defs.h"
-#include "../vm/rt_managed_types.h"
+#include "vm/rt_managed_types.h"
 
 namespace leanclr::interp
 {

@@ -8,7 +8,7 @@
 #include <utility>
 #include <type_traits>
 
-#include "../alloc/general_allocator.h"
+#include "alloc/general_allocator.h"
 
 namespace leanclr::utils
 {

@@ -3,12 +3,12 @@
 #include <optional>
 
 #include "rt_managed_types.h"
-#include "../utils/hashmap.h"
-#include "../utils/rt_vector.h"
-#include "../utils/string_util.h"
-#include "../utils/rt_span.h"
+#include "utils/hashmap.h"
+#include "utils/rt_vector.h"
+#include "utils/string_util.h"
+#include "utils/rt_span.h"
 #include "rt_exception.h"
-#include "../interp/eval_stack_op.h"
+#include "interp/eval_stack_op.h"
 
 namespace leanclr::vm
 {

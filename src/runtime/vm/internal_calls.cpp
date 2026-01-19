@@ -1,11 +1,11 @@
 #include "internal_calls.h"
 #include "method.h"
 #include "class.h"
-#include "../metadata/module_def.h"
-#include "../utils/string_builder.h"
-#include "../utils/string_util.h"
-#include "../metadata/metadata_name.h"
-#include "../icalls/internal_call_stubs.h"
+#include "metadata/module_def.h"
+#include "utils/string_builder.h"
+#include "utils/string_util.h"
+#include "metadata/metadata_name.h"
+#include "icalls/internal_call_stubs.h"
 
 namespace leanclr::vm
 {

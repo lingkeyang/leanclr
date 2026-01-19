@@ -2,7 +2,7 @@
 
 #include "rt_managed_types.h"
 #include "interp_defs.h"
-#include "../vm/field.h"
+#include "vm/field.h"
 
 namespace leanclr::interp::ll
 {

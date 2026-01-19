@@ -1,7 +1,7 @@
 #include "system_reflection_eventinfo.h"
 
-#include "../vm/class.h"
-#include "../vm/reflection.h"
+#include "vm/class.h"
+#include "vm/reflection.h"
 
 namespace leanclr::icalls
 {

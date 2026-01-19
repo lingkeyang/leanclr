@@ -2,7 +2,7 @@
 
 #include "rt_metadata.h"
 #include "rt_managed_types.h"
-#include "../utils/rt_span.h"
+#include "utils/rt_span.h"
 
 namespace leanclr::vm
 {

@@ -2,7 +2,7 @@
 
 #include <cstdlib>
 #include <cstring>
-#include "../alloc/general_allocation.h"
+#include "alloc/general_allocation.h"
 
 namespace leanclr::misc
 {

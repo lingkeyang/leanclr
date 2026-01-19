@@ -18,12 +18,12 @@
 #include "environment.h"
 #include "settings.h"
 
-#include "../metadata/metadata_cache.h"
-#include "../metadata/module_def.h"
-#include "../alloc/general_allocation.h"
-#include "../gc/garbage_collector.h"
-#include "../interp/machine_state.h"
-#include "../utils/rt_vector.h"
+#include "metadata/metadata_cache.h"
+#include "metadata/module_def.h"
+#include "alloc/general_allocation.h"
+#include "gc/garbage_collector.h"
+#include "interp/machine_state.h"
+#include "utils/rt_vector.h"
 
 namespace leanclr::vm
 {

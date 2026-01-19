@@ -1,11 +1,11 @@
 #include "system_threading_thread.h"
 
 #include "icall_base.h"
-#include "../vm/rt_thread.h"
-#include "../vm/rt_array.h"
-#include "../vm/rt_string.h"
-#include "../vm/appdomain.h"
-#include "../utils/string_util.h"
+#include "vm/rt_thread.h"
+#include "vm/rt_array.h"
+#include "vm/rt_string.h"
+#include "vm/appdomain.h"
+#include "utils/string_util.h"
 
 #include <cstring>
 

@@ -1,7 +1,7 @@
 #include "object.h"
 #include "class.h"
 #include "runtime.h"
-#include "../gc/garbage_collector.h"
+#include "gc/garbage_collector.h"
 #include "rt_managed_types.h"
 #include "rt_array.h"
 

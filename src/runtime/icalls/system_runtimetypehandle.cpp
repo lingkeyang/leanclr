@@ -1,15 +1,15 @@
 #include "system_runtimetypehandle.h"
 
 #include "icall_base.h"
-#include "../vm/class.h"
-#include "../vm/object.h"
-#include "../vm/reflection.h"
-#include "../vm/rt_string.h"
-#include "../vm/type.h"
-#include "../utils/string_builder.h"
-#include "../utils/string_util.h"
-#include "../interp/interp_defs.h"
-#include "../metadata/module_def.h"
+#include "vm/class.h"
+#include "vm/object.h"
+#include "vm/reflection.h"
+#include "vm/rt_string.h"
+#include "vm/type.h"
+#include "utils/string_builder.h"
+#include "utils/string_util.h"
+#include "interp/interp_defs.h"
+#include "metadata/module_def.h"
 
 namespace leanclr::icalls
 {

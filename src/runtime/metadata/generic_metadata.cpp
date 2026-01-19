@@ -1,7 +1,7 @@
 #include "generic_metadata.h"
 #include "metadata_cache.h"
-#include "../vm/class.h"
-#include "../alloc/metadata_allocation.h"
+#include "vm/class.h"
+#include "alloc/metadata_allocation.h"
 #include <cstring>
 
 namespace leanclr::metadata

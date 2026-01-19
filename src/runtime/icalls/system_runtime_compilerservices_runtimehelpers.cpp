@@ -1,12 +1,12 @@
 #include "system_runtime_compilerservices_runtimehelpers.h"
 
 #include "icall_base.h"
-#include "../vm/rt_array.h"
-#include "../vm/class.h"
-#include "../vm/field.h"
-#include "../vm/object.h"
-#include "../vm/runtime.h"
-#include "../vm/rt_string.h"
+#include "vm/rt_array.h"
+#include "vm/class.h"
+#include "vm/field.h"
+#include "vm/object.h"
+#include "vm/runtime.h"
+#include "vm/rt_string.h"
 
 namespace leanclr::icalls
 {

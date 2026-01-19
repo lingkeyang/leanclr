@@ -3,13 +3,13 @@
 #include <cstring>
 
 #include "icall_base.h"
-#include "../vm/reflection.h"
-#include "../vm/assembly.h"
-#include "../vm/class.h"
-#include "../vm/assembly.h"
-#include "../vm/rt_array.h"
-#include "../metadata/module_def.h"
-#include "../metadata/metadata_cache.h"
+#include "vm/reflection.h"
+#include "vm/assembly.h"
+#include "vm/class.h"
+#include "vm/assembly.h"
+#include "vm/rt_array.h"
+#include "metadata/module_def.h"
+#include "metadata/metadata_cache.h"
 
 namespace leanclr::icalls
 {

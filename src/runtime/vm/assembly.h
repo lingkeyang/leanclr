@@ -3,7 +3,7 @@
 #include "rt_base.h"
 #include "rt_managed_types.h"
 #include "rt_thread.h"
-#include "../utils/rt_span.h"
+#include "utils/rt_span.h"
 
 namespace leanclr::vm
 {

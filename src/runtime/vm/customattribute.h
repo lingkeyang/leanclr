@@ -1,7 +1,7 @@
 #pragma once
 
 #include "rt_managed_types.h"
-#include "../utils/binary_reader.h"
+#include "utils/binary_reader.h"
 
 namespace leanclr::vm
 {

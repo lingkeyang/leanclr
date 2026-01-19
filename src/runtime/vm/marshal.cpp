@@ -1,11 +1,11 @@
 #include "marshal.h"
 
-#include "../alloc/general_allocation.h"
+#include "alloc/general_allocation.h"
 #include "rt_string.h"
 #include "class.h"
 #include "field.h"
-#include "../utils/string_util.h"
-#include "../utils/string_builder.h"
+#include "utils/string_util.h"
+#include "utils/string_builder.h"
 
 namespace leanclr::vm
 {

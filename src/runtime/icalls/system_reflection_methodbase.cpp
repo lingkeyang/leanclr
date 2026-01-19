@@ -1,7 +1,7 @@
 #include "system_reflection_methodbase.h"
 #include "icall_base.h"
-#include "../vm/reflection.h"
-#include "../interp/machine_state.h"
+#include "vm/reflection.h"
+#include "interp/machine_state.h"
 
 namespace leanclr::icalls
 {

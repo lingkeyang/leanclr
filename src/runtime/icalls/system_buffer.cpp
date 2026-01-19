@@ -1,6 +1,6 @@
 #include "system_buffer.h"
-#include "../vm/rt_array.h"
-#include "../vm/class.h"
+#include "vm/rt_array.h"
+#include "vm/class.h"
 
 using namespace leanclr::core;
 using namespace leanclr::vm;

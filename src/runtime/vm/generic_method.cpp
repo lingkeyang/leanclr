@@ -3,12 +3,12 @@
 #include "class.h"
 #include "generic_class.h"
 #include "shim.h"
-#include "../metadata/generic_metadata.h"
-#include "../metadata/metadata_cache.h"
-#include "../metadata/module_def.h"
-#include "../alloc/metadata_allocation.h"
-#include "../utils/hashmap.h"
-#include "../alloc/mem_pool.h"
+#include "metadata/generic_metadata.h"
+#include "metadata/metadata_cache.h"
+#include "metadata/module_def.h"
+#include "alloc/metadata_allocation.h"
+#include "utils/hashmap.h"
+#include "alloc/mem_pool.h"
 
 namespace leanclr::vm
 {

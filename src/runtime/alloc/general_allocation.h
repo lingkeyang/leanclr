@@ -3,7 +3,7 @@
 #include <cstdlib>
 #include <cstring>
 
-#include "../rt_base.h"
+#include "rt_base.h"
 
 namespace leanclr::alloc
 {

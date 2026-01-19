@@ -1,7 +1,7 @@
 #include "system_reflection_customattributedata.h"
 
-#include "../vm/customattribute.h"
-#include "../utils/binary_reader.h"
+#include "vm/customattribute.h"
+#include "utils/binary_reader.h"
 
 namespace leanclr::icalls
 {

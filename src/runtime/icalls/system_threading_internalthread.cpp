@@ -1,8 +1,8 @@
 #include "system_threading_internalthread.h"
 
-#include "../alloc/general_allocation.h"
-#include "../vm/rt_managed_types.h"
-#include "../vm/rt_thread.h"
+#include "alloc/general_allocation.h"
+#include "vm/rt_managed_types.h"
+#include "vm/rt_thread.h"
 
 namespace leanclr::icalls
 {

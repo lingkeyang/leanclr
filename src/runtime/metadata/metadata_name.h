@@ -1,7 +1,7 @@
 #pragma once
 
 #include "rt_metadata.h"
-#include "../utils/string_builder.h"
+#include "utils/string_builder.h"
 
 namespace leanclr::metadata
 {

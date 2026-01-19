@@ -2,15 +2,15 @@
 #include <cstdint>
 #include "ll_transformer.h"
 #include "hl_transformer.h"
-#include "../vm/class.h"
-#include "../vm/field.h"
-#include "../vm/rt_string.h"
-#include "../vm/assembly.h"
-#include "../vm/array_class.h"
-#include "../metadata/metadata_const.h"
-#include "../metadata/module_def.h"
-#include "../utils/platform.h"
-#include "../const_strs.h"
+#include "vm/class.h"
+#include "vm/field.h"
+#include "vm/rt_string.h"
+#include "vm/assembly.h"
+#include "vm/array_class.h"
+#include "metadata/metadata_const.h"
+#include "metadata/module_def.h"
+#include "utils/platform.h"
+#include "const_strs.h"
 
 namespace leanclr::interp::ll
 {

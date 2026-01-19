@@ -1,8 +1,8 @@
 #include "pe_image_reader.h"
 
-#include "../alloc/general_allocation.h"
-#include "../utils/binary_reader.h"
-#include "../alloc/mem_pool.h"
+#include "alloc/general_allocation.h"
+#include "utils/binary_reader.h"
+#include "alloc/mem_pool.h"
 #include "cli_image.h"
 
 #include <cstring>

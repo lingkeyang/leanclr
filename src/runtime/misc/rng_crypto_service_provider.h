@@ -2,7 +2,7 @@
 
 #include <cstdint>
 
-#include "../rt_base.h"
+#include "rt_base.h"
 
 namespace leanclr::misc
 {

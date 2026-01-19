@@ -1,6 +1,6 @@
 #include "system_runtime_interopservices_runtimeinformation.h"
 
-#include "../platform/architecture.h"
+#include "platform/architecture.h"
 
 namespace leanclr::icalls
 {

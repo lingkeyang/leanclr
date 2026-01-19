@@ -1,6 +1,6 @@
 #include "mono_runtimegptrarrayhandle.h"
 #include "icall_base.h"
-#include "../utils/safegptrarray.h"
+#include "utils/safegptrarray.h"
 
 namespace leanclr::icalls
 {

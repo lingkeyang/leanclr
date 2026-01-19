@@ -1,5 +1,5 @@
 #include "system_threading_volatile.h"
-#include "../interp/eval_stack_op.h"
+#include "interp/eval_stack_op.h"
 
 namespace leanclr::intrinsics
 {

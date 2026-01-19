@@ -1,10 +1,10 @@
 #include "system_string.h"
 
 #include "icall_base.h"
-#include "../vm/rt_string.h"
-#include "../vm/rt_array.h"
-#include "../utils/string_util.h"
-#include "../utils/string_builder.h"
+#include "vm/rt_string.h"
+#include "vm/rt_array.h"
+#include "utils/string_util.h"
+#include "utils/string_builder.h"
 
 namespace leanclr::icalls
 {

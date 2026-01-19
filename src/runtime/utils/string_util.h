@@ -2,7 +2,7 @@
 
 #include <string>
 
-#include "../rt_base.h"
+#include "rt_base.h"
 #include "hash_util.h"
 
 namespace leanclr::utils

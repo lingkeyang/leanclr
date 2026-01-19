@@ -1,11 +1,11 @@
 #include "intrinsics.h"
 #include "method.h"
 #include "class.h"
-#include "../metadata/module_def.h"
-#include "../utils/string_builder.h"
-#include "../utils/string_util.h"
-#include "../metadata/metadata_name.h"
-#include "../intrinsics/intrinsic_stubs.h"
+#include "metadata/module_def.h"
+#include "utils/string_builder.h"
+#include "utils/string_util.h"
+#include "metadata/metadata_name.h"
+#include "intrinsics/intrinsic_stubs.h"
 
 namespace leanclr::vm
 {

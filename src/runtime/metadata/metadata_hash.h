@@ -1,7 +1,7 @@
 #pragma once
 
 #include "rt_metadata.h"
-#include "../utils/hash_util.h"
+#include "utils/hash_util.h"
 
 // Type signature hashing (from metadata_hash.rs)
 // Forward declaration for RtTypeSig

@@ -1,7 +1,7 @@
 #include "system_array.h"
 
-#include "../interp/eval_stack_op.h"
-#include "../vm/rt_array.h"
+#include "interp/eval_stack_op.h"
+#include "vm/rt_array.h"
 
 namespace leanclr::intrinsics
 {

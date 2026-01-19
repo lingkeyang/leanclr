@@ -2,10 +2,10 @@
 
 #include "method.h"
 #include "class.h"
-#include "../metadata/module_def.h"
-#include "../utils/string_builder.h"
-#include "../utils/string_util.h"
-#include "../metadata/metadata_name.h"
+#include "metadata/module_def.h"
+#include "utils/string_builder.h"
+#include "utils/string_util.h"
+#include "metadata/metadata_name.h"
 
 namespace leanclr::vm
 {

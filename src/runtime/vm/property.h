@@ -1,7 +1,7 @@
 #pragma once
 
 #include "rt_managed_types.h"
-#include "../utils/rt_vector.h"
+#include "utils/rt_vector.h"
 
 namespace leanclr::vm
 {

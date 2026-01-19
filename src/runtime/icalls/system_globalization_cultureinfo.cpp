@@ -1,7 +1,7 @@
 #include "system_globalization_cultureinfo.h"
 #include "icall_base.h"
 
-#include "../vm/rt_string.h"
+#include "vm/rt_string.h"
 
 namespace leanclr::icalls
 {

@@ -1,15 +1,15 @@
 #include "system_appdomain.h"
 #include "icall_base.h"
 
-#include "../utils/string_builder.h"
-#include "../vm/assembly.h"
-#include "../vm/appdomain.h"
-#include "../vm/reflection.h"
-#include "../vm/class.h"
-#include "../vm/rt_array.h"
-#include "../vm/rt_string.h"
-#include "../vm/rt_thread.h"
-#include "../metadata/module_def.h"
+#include "utils/string_builder.h"
+#include "vm/assembly.h"
+#include "vm/appdomain.h"
+#include "vm/reflection.h"
+#include "vm/class.h"
+#include "vm/rt_array.h"
+#include "vm/rt_string.h"
+#include "vm/rt_thread.h"
+#include "metadata/module_def.h"
 
 namespace leanclr::icalls
 {

@@ -7,8 +7,8 @@
 #include "vm/class.h"
 #include "vm/field.h"
 #include "vm/marshal.h"
-#include "../utils/string_builder.h"
-#include "../utils/string_util.h"
+#include "utils/string_builder.h"
+#include "utils/string_util.h"
 
 namespace leanclr::icalls
 {

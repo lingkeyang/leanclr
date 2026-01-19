@@ -1,7 +1,7 @@
 #include "system_span.h"
 #include "system_readonlyspan.h"
-#include "../interp/interp_defs.h"
-#include "../interp/eval_stack_op.h"
+#include "interp/interp_defs.h"
+#include "interp/eval_stack_op.h"
 
 namespace leanclr::intrinsics
 {

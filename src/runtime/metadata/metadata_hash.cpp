@@ -1,5 +1,5 @@
 #include "metadata_hash.h"
-#include "../utils/hash_util.h"
+#include "utils/hash_util.h"
 
 namespace leanclr::metadata
 {

@@ -1,9 +1,9 @@
 #pragma once
 
-#include "../rt_base.h"
-#include "../metadata/rt_metadata.h"
-#include "../utils/hashset.h"
-#include "../alloc/mem_pool.h"
+#include "rt_base.h"
+#include "metadata/rt_metadata.h"
+#include "utils/hashset.h"
+#include "alloc/mem_pool.h"
 #include "il_opcodes.h"
 
 namespace leanclr::interp

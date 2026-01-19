@@ -1,9 +1,9 @@
 #include "system_reflection_runtimeeventinfo.h"
 
-#include "../vm/class.h"
-#include "../vm/reflection.h"
-#include "../vm/rt_array.h"
-#include "../vm/rt_string.h"
+#include "vm/class.h"
+#include "vm/reflection.h"
+#include "vm/rt_array.h"
+#include "vm/rt_string.h"
 
 namespace leanclr::icalls
 {

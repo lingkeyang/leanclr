@@ -1,10 +1,10 @@
 #include "system_typedreference.h"
 
-#include "../vm/rt_array.h"
-#include "../vm/class.h"
-#include "../vm/field.h"
-#include "../vm/object.h"
-#include "../vm/rt_managed_types.h"
+#include "vm/rt_array.h"
+#include "vm/class.h"
+#include "vm/field.h"
+#include "vm/object.h"
+#include "vm/rt_managed_types.h"
 
 namespace leanclr::icalls
 {

@@ -1,7 +1,7 @@
 #include "system_gc.h"
 
 #include "icall_base.h"
-#include "../vm/gc.h"
+#include "vm/gc.h"
 
 namespace leanclr::icalls
 {

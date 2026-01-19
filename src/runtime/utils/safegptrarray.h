@@ -1,7 +1,7 @@
 #pragma once
 
-#include "../build_config.h"
-#include "../alloc/general_allocation.h"
+#include "build_config.h"
+#include "alloc/general_allocation.h"
 
 namespace leanclr::utils
 {

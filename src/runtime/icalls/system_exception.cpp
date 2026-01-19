@@ -1,7 +1,7 @@
 #include "system_exception.h"
 
 #include "icall_base.h"
-#include "../vm/rt_exception.h"
+#include "vm/rt_exception.h"
 
 namespace leanclr::icalls
 {

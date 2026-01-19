@@ -1,15 +1,15 @@
 #include "module_def.h"
 
 #include "const_strs.h"
-#include "../utils/rt_vector.h"
-#include "../utils/string_util.h"
-#include "../alloc/general_allocator.h"
-#include "../metadata/metadata_cache.h"
-#include "../metadata/metadata_compare.h"
-#include "../vm/rt_string.h"
-#include "../vm/assembly.h"
-#include "../vm/class.h"
-#include "../vm/method.h"
+#include "utils/rt_vector.h"
+#include "utils/string_util.h"
+#include "alloc/general_allocator.h"
+#include "metadata/metadata_cache.h"
+#include "metadata/metadata_compare.h"
+#include "vm/rt_string.h"
+#include "vm/assembly.h"
+#include "vm/class.h"
+#include "vm/method.h"
 
 namespace leanclr::metadata
 {

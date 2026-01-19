@@ -13,11 +13,11 @@
 #include "object.h"
 #include "rt_array.h"
 #include "reflection.h"
-#include "../metadata/generic_metadata.h"
-#include "../metadata/metadata_cache.h"
-#include "../metadata/metadata_compare.h"
-#include "../metadata/module_def.h"
-#include "../interp/interp_defs.h"
+#include "metadata/generic_metadata.h"
+#include "metadata/metadata_cache.h"
+#include "metadata/metadata_compare.h"
+#include "metadata/module_def.h"
+#include "interp/interp_defs.h"
 
 namespace leanclr::vm
 {

@@ -1,8 +1,8 @@
 #include "metadata_const.h"
 #include "module_def.h"
-#include "../vm/class.h"
-#include "../vm/object.h"
-#include "../vm/rt_string.h"
+#include "vm/class.h"
+#include "vm/object.h"
+#include "vm/rt_string.h"
 
 namespace leanclr::metadata
 {

@@ -1,9 +1,9 @@
 #include "system_array.h"
 #include "icall_base.h"
-#include "../vm/rt_array.h"
-#include "../vm/object.h"
-#include "../vm/class.h"
-#include "../vm/array_class.h"
+#include "vm/rt_array.h"
+#include "vm/object.h"
+#include "vm/class.h"
+#include "vm/array_class.h"
 #include <cstring>
 
 namespace leanclr::icalls

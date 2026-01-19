@@ -1,12 +1,12 @@
 #include "system_valuetype.h"
 #include "icall_base.h"
 
-#include "../vm/object.h"
-#include "../vm/class.h"
-#include "../vm/field.h"
-#include "../vm/rt_string.h"
-#include "../vm/rt_array.h"
-#include "../utils/rt_vector.h"
+#include "vm/object.h"
+#include "vm/class.h"
+#include "vm/field.h"
+#include "vm/rt_string.h"
+#include "vm/rt_array.h"
+#include "utils/rt_vector.h"
 
 namespace leanclr::icalls
 {

@@ -1,6 +1,6 @@
 #include "string_util.h"
 
-#include "../alloc/general_allocation.h"
+#include "alloc/general_allocation.h"
 #include "utf8/utf8.h"
 #include "string_builder.h"
 

@@ -1,7 +1,7 @@
 #include "system_datetime.h"
 
 #include "icall_base.h"
-#include "../platform/rt_time.h"
+#include "platform/rt_time.h"
 
 namespace leanclr::icalls
 {

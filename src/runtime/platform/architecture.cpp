@@ -1,6 +1,6 @@
 #include "architecture.h"
 
-#include "../vm/rt_string.h"
+#include "vm/rt_string.h"
 
 namespace leanclr::os
 {

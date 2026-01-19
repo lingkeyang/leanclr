@@ -3,9 +3,9 @@
 #include "class.h"
 #include "rt_array.h"
 #include "rt_array.h"
-#include "../utils/hashmap.h"
-#include "../utils/string_util.h"
-#include "../utils/string_builder.h"
+#include "utils/hashmap.h"
+#include "utils/string_util.h"
+#include "utils/string_builder.h"
 
 namespace leanclr::vm
 {

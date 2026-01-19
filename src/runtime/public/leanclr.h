@@ -1,8 +1,8 @@
 #pragma once
 
 #include <cstring>
-#include "../metadata/rt_metadata.h"
-#include "../vm/pinvoke.h"
+#include "metadata/rt_metadata.h"
+#include "vm/pinvoke.h"
 
 namespace leanclr
 {

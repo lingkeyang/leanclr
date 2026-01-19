@@ -1,7 +1,7 @@
 #include "metadata_name.h"
-#include "../utils/string_builder.h"
-#include "../vm/class.h"
-#include "../vm/method.h"
+#include "utils/string_builder.h"
+#include "vm/class.h"
+#include "vm/method.h"
 #include "module_def.h"
 
 namespace leanclr::metadata

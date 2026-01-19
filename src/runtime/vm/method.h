@@ -4,8 +4,8 @@
 
 #include "rt_managed_types.h"
 #include "runtime.h"
-#include "../core/rt_result.h"
-#include "../utils/rt_vector.h"
+#include "core/rt_result.h"
+#include "utils/rt_vector.h"
 
 namespace leanclr::vm
 {

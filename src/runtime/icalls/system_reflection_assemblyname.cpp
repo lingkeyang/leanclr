@@ -1,7 +1,7 @@
 #include "system_reflection_assemblyname.h"
 
-#include "../vm/reflection.h"
-#include "../vm/type.h"
+#include "vm/reflection.h"
+#include "vm/type.h"
 #include <cstring>
 
 namespace leanclr::icalls

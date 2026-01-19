@@ -2,8 +2,8 @@
 
 #include <cstdint>
 
-#include "../vm/intrinsics.h"
-#include "../vm/rt_managed_types.h"
+#include "vm/intrinsics.h"
+#include "vm/rt_managed_types.h"
 
 namespace leanclr::intrinsics
 {

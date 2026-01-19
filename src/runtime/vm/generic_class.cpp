@@ -4,10 +4,10 @@
 #include "generic_class.h"
 #include "class.h"
 #include "generic_method.h"
-#include "../metadata/generic_metadata.h"
-#include "../metadata/metadata_cache.h"
-#include "../metadata/module_def.h"
-#include "../alloc/metadata_allocation.h"
+#include "metadata/generic_metadata.h"
+#include "metadata/metadata_cache.h"
+#include "metadata/module_def.h"
+#include "alloc/metadata_allocation.h"
 
 namespace leanclr::vm
 {

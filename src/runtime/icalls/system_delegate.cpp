@@ -1,12 +1,12 @@
 #include "system_delegate.h"
 
 #include "icall_base.h"
-#include "../vm/rt_managed_types.h"
-#include "../vm/delegate.h"
-#include "../vm/method.h"
-#include "../vm/object.h"
-#include "../vm/class.h"
-#include "../vm/reflection.h"
+#include "vm/rt_managed_types.h"
+#include "vm/delegate.h"
+#include "vm/method.h"
+#include "vm/object.h"
+#include "vm/class.h"
+#include "vm/reflection.h"
 
 namespace leanclr::icalls
 {

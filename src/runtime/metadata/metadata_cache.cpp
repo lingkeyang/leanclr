@@ -1,11 +1,11 @@
 #include "metadata_cache.h"
 #include "module_def.h"
-#include "../utils/hashmap.h"
-#include "../utils/hashset.h"
-#include "../utils/hash_util.h"
-#include "../metadata/metadata_compare.h"
-#include "../metadata/metadata_hash.h"
-#include "../alloc/metadata_allocation.h"
+#include "utils/hashmap.h"
+#include "utils/hashset.h"
+#include "utils/hash_util.h"
+#include "metadata/metadata_compare.h"
+#include "metadata/metadata_hash.h"
+#include "alloc/metadata_allocation.h"
 
 namespace leanclr::metadata
 {

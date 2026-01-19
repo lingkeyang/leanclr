@@ -7,7 +7,7 @@
 #include <cstring>
 
 #include "general_allocation.h"
-#include "../utils/mem_op.h"
+#include "utils/mem_op.h"
 
 
 namespace leanclr::alloc

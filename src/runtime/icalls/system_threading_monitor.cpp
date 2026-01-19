@@ -1,6 +1,6 @@
 #include "system_threading_monitor.h"
 #include "icall_base.h"
-#include "../vm/monitor.h"
+#include "vm/monitor.h"
 
 namespace leanclr::icalls
 {

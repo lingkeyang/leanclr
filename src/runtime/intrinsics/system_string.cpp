@@ -1,7 +1,7 @@
 #include "system_string.h"
 
-#include "../interp/eval_stack_op.h"
-#include "../vm/rt_string.h"
+#include "interp/eval_stack_op.h"
+#include "vm/rt_string.h"
 
 namespace leanclr::intrinsics
 {

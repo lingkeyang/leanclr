@@ -6,7 +6,7 @@
 #include <cstdint>
 #include <cstring>
 
-#include "../alloc/mem_pool.h"
+#include "alloc/mem_pool.h"
 
 namespace leanclr::utils
 {

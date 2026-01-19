@@ -1,7 +1,7 @@
 #pragma once
 
 #include "rt_metadata.h"
-#include "../utils/rt_vector.h"
+#include "utils/rt_vector.h"
 
 namespace leanclr::metadata
 {

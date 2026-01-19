@@ -3,9 +3,9 @@
 
 #include "cli_image.h"
 
-#include "../utils/binary_reader.h"
-#include "../alloc/mem_pool.h"
-#include "../utils/rt_vector.h"
+#include "utils/binary_reader.h"
+#include "alloc/mem_pool.h"
+#include "utils/rt_vector.h"
 namespace leanclr::metadata
 {
 using utils::BinaryReader;

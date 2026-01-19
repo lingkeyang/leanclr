@@ -11,11 +11,11 @@
 #include "reflection.h"
 #include "type.h"
 #include "runtime.h"
-#include "../utils/binary_reader.h"
-#include "../utils/rt_span.h"
+#include "utils/binary_reader.h"
+#include "utils/rt_span.h"
 #include "gc/garbage_collector.h"
-#include "../metadata/module_def.h"
-#include "../const_strs.h"
+#include "metadata/module_def.h"
+#include "const_strs.h"
 
 namespace leanclr::vm
 {

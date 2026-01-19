@@ -1,5 +1,5 @@
 #include "public/leanclr.h"
-#include "../vm/pinvoke.h"
+#include "vm/pinvoke.h"
 
 namespace leanclr
 {

@@ -1,7 +1,7 @@
 #include "interp_defs.h"
 
-#include "../vm/class.h"
-#include "../vm/generic_class.h"
+#include "vm/class.h"
+#include "vm/generic_class.h"
 
 namespace leanclr::interp
 {

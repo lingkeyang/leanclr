@@ -1,14 +1,14 @@
 
 #include "rt_string.h"
-#include "../gc/garbage_collector.h"
+#include "gc/garbage_collector.h"
 #include "class.h"
 #include "field.h"
 #include "utf8/utf8.h"
 #include <vector>
 #include <string>
 #include <cstring>
-#include "../utils/hashset.h"
-#include "../utils/hash_util.h"
+#include "utils/hashset.h"
+#include "utils/hash_util.h"
 
 namespace leanclr::vm
 {

@@ -1,8 +1,8 @@
 #include "system_threading_interlocked.h"
 
-#include "../core/rt_err.h"
-#include "../interp/eval_stack_op.h"
-#include "../vm/object.h"
+#include "core/rt_err.h"
+#include "interp/eval_stack_op.h"
+#include "vm/object.h"
 
 namespace leanclr::intrinsics
 {

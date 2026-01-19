@@ -2,8 +2,8 @@
 #include "rt_string.h"
 #include "rt_array.h"
 #include "class.h"
-#include "../metadata/metadata_cache.h"
-#include "../alloc/general_allocation.h"
+#include "metadata/metadata_cache.h"
+#include "alloc/general_allocation.h"
 
 namespace leanclr::vm
 {

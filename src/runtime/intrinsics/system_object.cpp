@@ -1,7 +1,7 @@
 #include "system_object.h"
-#include "../interp/interp_defs.h"
-#include "../vm/object.h"
-#include "../vm/class.h"
+#include "interp/interp_defs.h"
+#include "vm/object.h"
+#include "vm/class.h"
 
 namespace leanclr::intrinsics
 {

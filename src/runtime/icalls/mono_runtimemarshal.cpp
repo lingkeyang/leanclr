@@ -1,7 +1,7 @@
 #include "mono_runtimemarshal.h"
 
 #include "icall_base.h"
-#include "../alloc/general_allocation.h"
+#include "alloc/general_allocation.h"
 
 namespace leanclr::icalls
 {

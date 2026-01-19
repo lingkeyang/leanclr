@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../metadata/rt_metadata.h"
+#include "metadata/rt_metadata.h"
 
 namespace leanclr::vm
 {

@@ -5,9 +5,9 @@
 #include "reflection.h"
 #include "object.h"
 #include "method.h"
-#include "../interp/interp_defs.h"
-#include "../interp/machine_state.h"
-#include "../metadata/module_def.h"
+#include "interp/interp_defs.h"
+#include "interp/machine_state.h"
+#include "metadata/module_def.h"
 
 namespace leanclr::vm
 {

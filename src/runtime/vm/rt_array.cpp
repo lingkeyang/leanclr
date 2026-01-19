@@ -2,10 +2,10 @@
 #include "class.h"
 #include "object.h"
 #include "array_class.h"
-#include "../gc/garbage_collector.h"
-#include "../utils/mem_op.h"
+#include "gc/garbage_collector.h"
+#include "utils/mem_op.h"
 #include "rt_managed_types.h"
-#include "../interp/eval_stack_op.h"
+#include "interp/eval_stack_op.h"
 
 namespace leanclr::vm
 {

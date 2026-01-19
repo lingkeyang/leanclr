@@ -6,10 +6,10 @@
 #include "internal_calls.h"
 #include "intrinsics.h"
 #include "pinvoke.h"
-#include "../const_strs.h"
-#include "../interp/interpreter.h"
-#include "../utils/string_builder.h"
-#include "../metadata/metadata_name.h"
+#include "const_strs.h"
+#include "interp/interpreter.h"
+#include "utils/string_builder.h"
+#include "metadata/metadata_name.h"
 
 namespace leanclr::vm
 {

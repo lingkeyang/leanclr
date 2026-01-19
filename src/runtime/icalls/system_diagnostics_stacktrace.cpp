@@ -1,7 +1,7 @@
 #include "system_diagnostics_stacktrace.h"
 
 #include "icall_base.h"
-#include "../vm/stacktrace.h"
+#include "vm/stacktrace.h"
 
 namespace leanclr::icalls
 {

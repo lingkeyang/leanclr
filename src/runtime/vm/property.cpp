@@ -1,8 +1,8 @@
 #include "property.h"
 #include "method.h"
-#include "../core/rt_result.h"
-#include "../metadata/metadata_const.h"
-#include "../metadata/module_def.h"
+#include "core/rt_result.h"
+#include "metadata/metadata_const.h"
+#include "metadata/module_def.h"
 
 namespace leanclr::vm
 {

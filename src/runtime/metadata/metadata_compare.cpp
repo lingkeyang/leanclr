@@ -1,5 +1,5 @@
 #include "metadata_compare.h"
-#include "../vm/method.h"
+#include "vm/method.h"
 
 namespace leanclr::metadata
 {

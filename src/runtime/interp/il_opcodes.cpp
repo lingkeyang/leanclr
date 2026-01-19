@@ -1,5 +1,5 @@
 #include "il_opcodes.h"
-#include "../utils/mem_op.h"
+#include "utils/mem_op.h"
 
 namespace leanclr::interp::il
 {

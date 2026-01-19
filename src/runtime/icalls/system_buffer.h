@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../vm/internal_calls.h"
+#include "vm/internal_calls.h"
 
 namespace leanclr::icalls
 {

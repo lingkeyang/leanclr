@@ -1,9 +1,9 @@
 #include "system_currentsystemtimezone.h"
 
 #include "icall_base.h"
-#include "../vm/rt_array.h"
-#include "../vm/rt_string.h"
-#include "../vm/class.h"
+#include "vm/rt_array.h"
+#include "vm/rt_string.h"
+#include "vm/class.h"
 
 namespace leanclr::icalls
 {

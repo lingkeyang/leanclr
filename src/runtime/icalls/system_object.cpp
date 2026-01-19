@@ -1,8 +1,8 @@
 #include "system_object.h"
 #include "icall_base.h"
 
-#include "../vm/object.h"
-#include "../vm/reflection.h"
+#include "vm/object.h"
+#include "vm/reflection.h"
 
 namespace leanclr::icalls
 {

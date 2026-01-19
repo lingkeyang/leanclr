@@ -1,5 +1,5 @@
 #include "system_runtime_interopservices_gchandle.h"
-#include "../vm/gchandle.h"
+#include "vm/gchandle.h"
 
 namespace leanclr::icalls
 {
