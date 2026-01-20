@@ -59,7 +59,7 @@ RtResultVoid Class::init_corlib_classes(metadata::RtModuleDef* corlib)
     UNWRAP_OR_RET_ERR_ON_FAIL(t.cls_array, get_class_must_exist(corlib, "System.Array"));
     UNWRAP_OR_RET_ERR_ON_FAIL(t.cls_delegate, get_class_must_exist(corlib, "System.Delegate"));
     UNWRAP_OR_RET_ERR_ON_FAIL(t.cls_multicastdelegate, get_class_must_exist(corlib, "System.MulticastDelegate"));
-    UNWRAP_OR_RET_ERR_ON_FAIL(t.cls_delegatedata, get_class_must_exist(corlib, "System.DelegateData"));
+    // UNWRAP_OR_RET_ERR_ON_FAIL(t.cls_delegatedata, get_class_must_exist(corlib, "System.DelegateData"));
     UNWRAP_OR_RET_ERR_ON_FAIL(t.cls_systemtype, get_class_must_exist(corlib, "System.Type"));
     UNWRAP_OR_RET_ERR_ON_FAIL(t.cls_runtimetype, get_class_must_exist(corlib, "System.RuntimeType"));
 
@@ -186,7 +186,7 @@ RtResultVoid Class::verify_integrity_of_corlib_classes()
         t.cls_array,
         t.cls_delegate,
         t.cls_multicastdelegate,
-        t.cls_delegatedata,
+        // t.cls_delegatedata,
         t.cls_typedreference,
         t.cls_systemtype,
         t.cls_runtimetype,
@@ -270,7 +270,7 @@ RtResultVoid Class::verify_integrity_of_corlib_classes()
     RET_ERR_ON_FALSE(RT_TYPED_REFERENCE_SIZE == PTR_SIZE * 3, RtErr::BadImageFormat);
     RET_ERR_ON_FALSE(get_instance_size_without_object_header(t.cls_typedreference) == RT_TYPED_REFERENCE_SIZE, RtErr::BadImageFormat);
 
-    RET_ERR_ON_FALSE(get_instance_size_with_object_header(t.cls_delegatedata) == sizeof(RtDelegateData), RtErr::BadImageFormat);
+    // RET_ERR_ON_FALSE(get_instance_size_with_object_header(t.cls_delegatedata) == sizeof(RtDelegateData), RtErr::BadImageFormat);
     RET_ERR_ON_FALSE(get_instance_size_with_object_header(t.cls_delegate) == sizeof(RtDelegate), RtErr::BadImageFormat);
     RET_ERR_ON_FALSE(get_instance_size_with_object_header(t.cls_multicastdelegate) == sizeof(RtMulticastDelegate), RtErr::BadImageFormat);
     RET_ERR_ON_FALSE(get_instance_size_with_object_header(t.cls_exception) == sizeof(RtException), RtErr::BadImageFormat);

@@ -29,7 +29,7 @@ struct CorLibTypes
     metadata::RtClass* cls_array;
     metadata::RtClass* cls_delegate;
     metadata::RtClass* cls_multicastdelegate;
-    metadata::RtClass* cls_delegatedata;
+    // metadata::RtClass* cls_delegatedata;
     metadata::RtClass* cls_typedreference;
     metadata::RtClass* cls_systemtype;
     metadata::RtClass* cls_runtimetype;
