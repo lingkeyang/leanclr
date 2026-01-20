@@ -167,7 +167,7 @@ RtResult<bool> SystemRuntimeTypeHandle::is_subclass_of(const metadata::RtTypeSig
 
     DECLARING_AND_UNWRAP_OR_RET_ERR_ON_FAIL(metadata::RtClass*, child_class, vm::Class::get_class_from_typesig(child_type));
     DECLARING_AND_UNWRAP_OR_RET_ERR_ON_FAIL(metadata::RtClass*, parent_class, vm::Class::get_class_from_typesig(parent_type));
-
+    RET_ERR_ON_FAIL(vm::Class::initialize_super_types(child_class));
     RET_OK(vm::Class::is_subclass_of_initialized(child_class, parent_class, true));
 }
 
