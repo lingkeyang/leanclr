@@ -58,7 +58,26 @@ static RtResultVoid memmove_wbarrier_invoker(RtManagedMethodPointer method_point
 // @icall: System.Runtime.RuntimeImports::_ecvt_s
 RtResultVoid SystemRuntimeRuntimeImports::ecvt_s(uint8_t* buffer, int32_t size, double value, int32_t digits, int32_t* decpt, int32_t* sign)
 {
+#ifdef LEANCLR_PLATFORM_WIN
+    // Windows/MSVC: _ecvt_s
+    int err = _ecvt_s(reinterpret_cast<char*>(buffer), size, value, digits, decpt, sign);
+    if (err != 0)
+    {
+        RET_ERR(RtErr::Argument);
+    }
+#elif defined(LEANCLR_PLATFORM_POSIX)
+    // POSIX: ecvt
+    char* str = ecvt(value, digits, decpt, sign);
+    if (!str)
+    {
+        RET_ERR(RtErr::Argument);
+    }
+    std::strncpy(reinterpret_cast<char*>(buffer), str, size - 1);
+    buffer[size - 1] = 0;
+    RET_VOID_OK();
+#else
     RET_ERR(RtErr::NotImplemented);
+#endif
 }
 
 static RtResultVoid ecvt_s_invoker(RtManagedMethodPointer method_pointer, const RtMethodInfo* method, const interp::RtStackObject* params,
